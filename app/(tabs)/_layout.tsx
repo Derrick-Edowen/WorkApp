@@ -1,45 +1,78 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router'; // Import Tabs from expo-router
+import { Colors } from '@/constants/Colors'; // Custom color scheme
 import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+export default function TabLayout(): JSX.Element {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
+        headerShown: false, // Hide the header by default
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
+            position: 'absolute', // iOS style for the tab bar
           },
           default: {},
         }),
-      }}>
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="workouts"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Exercises',
+          tabBarIcon: ({ color }: { color: string }) => (
+            <Ionicons name="barbell" size={18} color={color} />
+          ),
+          // You can customize the header for this tab specifically
+          headerShown: true,
+          headerTitle: 'Exercises', // Custom title for the 'Workouts' tab
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="programs"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Programs',
+          tabBarIcon: ({ color }: { color: string }) => (
+            <Ionicons name="list" size={18} color={color} />
+          ),
+          headerShown: true,
+          headerTitle: 'Workout Programs', // Custom title for the 'Programs' tab
+        }}
+      />
+      <Tabs.Screen
+        name="schedule"
+        options={{
+          title: 'Schedule',
+          tabBarIcon: ({ color }: { color: string }) => (
+            <Ionicons name="calendar" size={18} color={color} />
+          ),
+          headerShown: true,
+          headerTitle: 'Workout Schedule', // Custom title for the 'Schedule' tab
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }: { color: string }) => (
+            <Ionicons name="person" size={18} color={color} />
+          ),
+          headerShown: true,
+          headerTitle: '{Name} Profile', // Custom title for the 'Profile' tab
         }}
       />
     </Tabs>
   );
 }
+
+
+
+
+
