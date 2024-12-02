@@ -3,6 +3,7 @@ import { View, StyleSheet, Animated, TouchableOpacity, Text } from 'react-native
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons'; // Import Ionicons
+import { router } from 'expo-router';
 
 type RootStackParamList = {
   'resistance-training': undefined;
@@ -44,16 +45,16 @@ const WorkoutsScreen: React.FC = () => {
   const handleCardPress = (category: Category) => {
     switch (category.name) {
       case 'Resistance Training':
-        navigation.navigate('resistance'); // Navigate to Resistance screen
+        router.push('/resistance'); // Navigate to Resistance screen
         break;
       case 'Cardio':
-        navigation.navigate('cardio'); // Navigate to Cardio screen
+        router.push('/cardio'); // Navigate to Cardio screen
         break;
       case 'Stretching':
-        navigation.navigate('stretching'); // Navigate to Stretching screen
+        router.push('/stretching'); // Navigate to Stretching screen
         break;
       case 'Other':
-        navigation.navigate('other'); // Navigate to Other screen
+        router.push('/other'); // Navigate to Other screen
         break;
       default:
         break;

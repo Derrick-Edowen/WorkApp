@@ -32,7 +32,7 @@ export default function TabLayout(): JSX.Element {
           ),
           // You can customize the header for this tab specifically
           headerShown: true,
-          headerTitle: 'Exercises', // Custom title for the 'Workouts' tab
+          headerTitle: `{Name's} Work App`, // Custom title for the 'Workouts' tab
         }}
       />
       <Tabs.Screen
@@ -43,7 +43,7 @@ export default function TabLayout(): JSX.Element {
             <Ionicons name="list" size={18} color={color} />
           ),
           headerShown: true,
-          headerTitle: 'Workout Programs', // Custom title for the 'Programs' tab
+          headerTitle: `{Name's} Programs`, // Custom title for the 'Programs' tab
         }}
       />
       <Tabs.Screen
@@ -54,7 +54,7 @@ export default function TabLayout(): JSX.Element {
             <Ionicons name="calendar" size={18} color={color} />
           ),
           headerShown: true,
-          headerTitle: 'Workout Schedule', // Custom title for the 'Schedule' tab
+          headerTitle: `{Name's} Workout Schedule`, // Custom title for the 'Schedule' tab
         }}
       />
       <Tabs.Screen
@@ -65,7 +65,7 @@ export default function TabLayout(): JSX.Element {
             <Ionicons name="person" size={18} color={color} />
           ),
           headerShown: true,
-          headerTitle: '{Name} Profile', // Custom title for the 'Profile' tab
+          headerTitle: `{Name's} Profile`, // Custom title for the 'Profile' tab
         }}
       />
     </Tabs>

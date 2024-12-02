@@ -1,0 +1,1548 @@
+[
+    {
+        "id": 1,
+        "name": "Biceps",
+        "exercises": [
+          {
+            "name": "Bicep Curls",
+            "description": "A fundamental exercise to strengthen your biceps.",
+            "video": "https://www.example.com/bicep-curls-video",
+            "instructions": [
+              "Hold dumbbells in both hands.",
+              "Curl your arms up while keeping your elbows stationary.",
+              "Slowly lower the dumbbells."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Hammer Curls",
+            "description": "Targets the brachialis for bigger arms.",
+            "video": "https://www.example.com/hammer-curls-video",
+            "instructions": [
+              "Hold dumbbells with a neutral grip.",
+              "Curl your arms up as in bicep curls.",
+              "Lower slowly."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Preacher Curls",
+            "description": "Isolates the biceps for a more focused workout.",
+            "video": "https://www.example.com/preacher-curls-video",
+            "instructions": [
+              "Use a preacher bench to support your arms.",
+              "Curl the weight upward, squeezing your biceps.",
+              "Lower the weight with control."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Concentration Curls",
+            "description": "Great for isolating and maximizing bicep contraction.",
+            "video": "https://www.example.com/concentration-curls-video",
+            "instructions": [
+              "Sit on a bench and rest your elbow on your inner thigh.",
+              "Curl the weight upward with control.",
+              "Lower it back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Zottman Curls",
+            "description": "Combines the benefits of standard and reverse curls.",
+            "video": "https://www.example.com/zottman-curls-video",
+            "instructions": [
+              "Perform a standard curl while supinating your grip.",
+              "At the top, rotate your wrists to a pronated position.",
+              "Lower the weight slowly."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Incline Dumbbell Curls",
+            "description": "Stretches the biceps for a deeper contraction.",
+            "video": "https://www.example.com/incline-dumbbell-curls-video",
+            "instructions": [
+              "Sit on an incline bench with dumbbells in both hands.",
+              "Curl the weights upward while keeping your arms stationary.",
+              "Lower the weights slowly."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Cable Curls",
+            "description": "Provides constant tension on the biceps.",
+            "video": "https://www.example.com/cable-curls-video",
+            "instructions": [
+              "Attach a straight bar to a low pulley on a cable machine.",
+              "Hold the bar with both hands and curl it upward.",
+              "Lower the bar back to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Reverse Curls",
+            "description": "Targets the brachialis and forearms along with the biceps.",
+            "video": "https://www.example.com/reverse-curls-video",
+            "instructions": [
+              "Hold the barbell with an overhand grip.",
+              "Curl the bar upward, keeping your wrists straight.",
+              "Lower it back down with control."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "21s",
+            "description": "A high-intensity exercise to fully exhaust your biceps.",
+            "video": "https://www.example.com/21s-video",
+            "instructions": [
+              "Perform 7 partial curls from the bottom to midway.",
+              "Perform 7 partial curls from midway to the top.",
+              "Perform 7 full-range curls."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Spider Curls",
+            "description": "Maximizes the biceps contraction by eliminating momentum.",
+            "video": "https://www.example.com/spider-curls-video",
+            "instructions": [
+              "Lie face-down on an incline bench.",
+              "Let your arms hang down and curl the weights upward.",
+              "Lower the weights with control."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Chin-Ups",
+            "description": "A compound bodyweight exercise that targets the biceps.",
+            "video": "https://www.example.com/chin-ups-video",
+            "instructions": [
+              "Grip the pull-up bar with palms facing you.",
+              "Pull your chin over the bar.",
+              "Lower yourself back down."
+            ],
+            "intensity": ["Beginner", "Intermediate", "Advanced"]
+          },
+          {
+            "name": "Barbell Curls",
+            "description": "A classic exercise for building bicep size and strength.",
+            "video": "https://www.example.com/barbell-curls-video",
+            "instructions": [
+              "Hold a barbell with both hands using an underhand grip.",
+              "Curl the bar upward, keeping your elbows close to your torso.",
+              "Lower it slowly with control."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Standing Resistance Band Curls",
+            "description": "An effective home workout for the biceps.",
+            "video": "https://www.example.com/resistance-band-curls-video",
+            "instructions": [
+              "Stand on a resistance band and hold the handles.",
+              "Curl the handles upward, squeezing your biceps.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "EZ-Bar Preacher Curls",
+            "description": "Focuses on isolating the biceps using the preacher bench and an EZ-bar.",
+            "video": "https://www.example.com/ez-bar-preacher-curls-video",
+            "instructions": [
+              "Hold the EZ-bar with an underhand grip.",
+              "Curl the bar upward while keeping your arms supported on the preacher bench.",
+              "Lower it back down slowly."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Incline Hammer Curls",
+            "description": "Stretches and targets the brachialis and biceps for a deeper contraction.",
+            "video": "https://www.example.com/incline-hammer-curls-video",
+            "instructions": [
+              "Sit on an incline bench with dumbbells in a neutral grip.",
+              "Curl the weights upward while keeping your arms stationary.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          }
+        ]
+      }
+      
+       
+      ,
+      {
+        "id": 2,
+        "name": "Triceps",
+        "exercises": [
+          {
+            "name": "Tricep Dips",
+            "description": "A bodyweight exercise for triceps strength.",
+            "video": "https://www.example.com/tricep-dips-video",
+            "instructions": [
+              "Use parallel bars or a sturdy chair.",
+              "Lower yourself until elbows are at 90 degrees.",
+              "Push yourself back up."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Overhead Extensions",
+            "description": "Excellent for targeting all three tricep heads.",
+            "video": "https://www.example.com/overhead-extensions-video",
+            "instructions": [
+              "Hold a dumbbell with both hands.",
+              "Extend your arms overhead.",
+              "Lower the dumbbell behind your head and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Close-Grip Bench Press",
+            "description": "Focuses on the triceps while also working the chest and shoulders.",
+            "video": "https://www.example.com/close-grip-bench-press-video",
+            "instructions": [
+              "Grip the barbell shoulder-width apart.",
+              "Lower the barbell to your chest.",
+              "Push it back up to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Tricep Pushdowns",
+            "description": "Uses a cable machine to isolate the triceps.",
+            "video": "https://www.example.com/tricep-pushdowns-video",
+            "instructions": [
+              "Attach a straight or angled bar to a high pulley.",
+              "Grip the bar and push it down until your arms are fully extended.",
+              "Return to the starting position with control."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Skull Crushers",
+            "description": "A great isolation exercise for triceps development.",
+            "video": "https://www.example.com/skull-crushers-video",
+            "instructions": [
+              "Lie on a bench holding an EZ-bar or dumbbells.",
+              "Lower the weight to your forehead while keeping your elbows stationary.",
+              "Extend your arms back to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Diamond Push-Ups",
+            "description": "A bodyweight exercise that emphasizes the triceps.",
+            "video": "https://www.example.com/diamond-pushups-video",
+            "instructions": [
+              "Form a diamond shape with your hands.",
+              "Lower your chest toward your hands.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Kickbacks",
+            "description": "Isolates the triceps using dumbbells.",
+            "video": "https://www.example.com/kickbacks-video",
+            "instructions": [
+              "Hold dumbbells in each hand and bend at the hips.",
+              "Extend your arms backward until fully straightened.",
+              "Return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Bodyweight Extensions",
+            "description": "A challenging tricep isolation exercise.",
+            "video": "https://www.example.com/bodyweight-extensions-video",
+            "instructions": [
+              "Kneel on the ground and place your hands on a stable surface.",
+              "Bend your elbows to lower your body toward your hands.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Lying Tricep Extensions",
+            "description": "A variation of skull crushers for targeted isolation.",
+            "video": "https://www.example.com/lying-tricep-extensions-video",
+            "instructions": [
+              "Lie on a flat bench holding an EZ-bar or dumbbells.",
+              "Lower the weights behind your head.",
+              "Extend your arms back to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Reverse Grip Pushdowns",
+            "description": "Targets the medial head of the triceps.",
+            "video": "https://www.example.com/reverse-grip-pushdowns-video",
+            "instructions": [
+              "Attach a straight bar to a high pulley.",
+              "Hold the bar with an underhand grip.",
+              "Push the bar down until your arms are fully extended.",
+              "Return to the starting position with control."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Bench Dips",
+            "description": "A great bodyweight exercise to strengthen triceps.",
+            "video": "https://www.example.com/bench-dips-video",
+            "instructions": [
+              "Place your hands on a bench and extend your legs forward.",
+              "Lower your body until your arms form a 90-degree angle.",
+              "Push yourself back up."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Overhead Cable Extensions",
+            "description": "Uses a cable machine to target the triceps.",
+            "video": "https://www.example.com/overhead-cable-extensions-video",
+            "instructions": [
+              "Attach a rope to a low pulley.",
+              "Hold the rope with both hands and extend it overhead.",
+              "Lower the rope behind your head and repeat."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "One-Arm Tricep Pushdowns",
+            "description": "Isolates each tricep individually.",
+            "video": "https://www.example.com/one-arm-pushdowns-video",
+            "instructions": [
+              "Attach a single handle to a high pulley.",
+              "Grip the handle and push it down until your arm is fully extended.",
+              "Return to the starting position with control."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Floor Press",
+            "description": "A compound movement that emphasizes the triceps.",
+            "video": "https://www.example.com/floor-press-video",
+            "instructions": [
+              "Lie on the floor with a barbell or dumbbells.",
+              "Lower the weight until your upper arms touch the floor.",
+              "Press it back up to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Weighted Dips",
+            "description": "An advanced version of tricep dips using added weight.",
+            "video": "https://www.example.com/weighted-dips-video",
+            "instructions": [
+              "Use parallel bars with a weight belt.",
+              "Lower yourself until elbows are at 90 degrees.",
+              "Push yourself back up."
+            ],
+            "intensity": ["Advanced"]
+          }
+        ]
+      }
+      ,
+      {
+        "id": 3,
+        "name": "Chest",
+        "exercises": [
+          {
+            "name": "Bench Press",
+            "description": "A classic chest-building exercise.",
+            "video": "https://www.example.com/bench-press-video",
+            "instructions": [
+              "Lie on a bench with feet flat on the ground.",
+              "Grip the barbell slightly wider than shoulder width.",
+              "Lower the bar to your chest and press up."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Push-Ups",
+            "description": "A bodyweight staple for chest strength.",
+            "video": "https://www.example.com/push-ups-video",
+            "instructions": [
+              "Get into a plank position.",
+              "Lower yourself until your chest nearly touches the floor.",
+              "Push back up."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Incline Bench Press",
+            "description": "Targets the upper chest for a fuller look.",
+            "video": "https://www.example.com/incline-bench-press-video",
+            "instructions": [
+              "Set the bench to an incline of 30-45 degrees.",
+              "Grip the barbell slightly wider than shoulder width.",
+              "Lower the bar to your upper chest and press up."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Decline Bench Press",
+            "description": "Focuses on the lower portion of the chest.",
+            "video": "https://www.example.com/decline-bench-press-video",
+            "instructions": [
+              "Set the bench to a decline position.",
+              "Grip the barbell slightly wider than shoulder width.",
+              "Lower the bar to your lower chest and press up."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Chest Flys",
+            "description": "Isolates the chest muscles for definition.",
+            "video": "https://www.example.com/chest-flys-video",
+            "instructions": [
+              "Lie on a flat bench holding dumbbells.",
+              "Lower your arms out to the sides with a slight bend at the elbows.",
+              "Bring the dumbbells back together over your chest."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Incline Dumbbell Flys",
+            "description": "Focuses on the upper chest with an incline.",
+            "video": "https://www.example.com/incline-dumbbell-flys-video",
+            "instructions": [
+              "Set the bench to an incline of 30-45 degrees.",
+              "Hold dumbbells and lower your arms out to the sides.",
+              "Bring the dumbbells back together over your chest."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Cable Crossovers",
+            "description": "Great for defining the inner chest muscles.",
+            "video": "https://www.example.com/cable-crossovers-video",
+            "instructions": [
+              "Set the pulleys to shoulder height.",
+              "Grab the handles and step forward.",
+              "Bring your hands together in front of your chest and return to the start."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Pec Deck Machine",
+            "description": "A machine-based isolation exercise for the chest.",
+            "video": "https://www.example.com/pec-deck-machine-video",
+            "instructions": [
+              "Sit on the machine with your back flat against the pad.",
+              "Grip the handles and bring them together in front of your chest.",
+              "Slowly return to the starting position."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Dumbbell Pullover",
+            "description": "Targets the chest and lats simultaneously.",
+            "video": "https://www.example.com/dumbbell-pullover-video",
+            "instructions": [
+              "Lie on a bench holding a dumbbell with both hands.",
+              "Lower the dumbbell behind your head while keeping your arms straight.",
+              "Bring the dumbbell back over your chest."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Incline Push-Ups",
+            "description": "A beginner-friendly push-up variation.",
+            "video": "https://www.example.com/incline-push-ups-video",
+            "instructions": [
+              "Place your hands on a sturdy elevated surface.",
+              "Lower your chest toward the surface.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Archer Push-Ups",
+            "description": "A challenging push-up variation for unilateral strength.",
+            "video": "https://www.example.com/archer-push-ups-video",
+            "instructions": [
+              "Spread your arms wide in a push-up position.",
+              "Lower your chest toward one hand while extending the other arm.",
+              "Switch sides and repeat."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Explosive Push-Ups",
+            "description": "Builds chest power with plyometric movement.",
+            "video": "https://www.example.com/explosive-push-ups-video",
+            "instructions": [
+              "Perform a push-up and push off the ground forcefully.",
+              "Clap your hands or lift them off the ground before landing.",
+              "Land softly and repeat."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Weighted Push-Ups",
+            "description": "Adds resistance to the classic push-up.",
+            "video": "https://www.example.com/weighted-push-ups-video",
+            "instructions": [
+              "Place a weight plate or weighted vest on your back.",
+              "Lower your chest toward the floor.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Svend Press",
+            "description": "A unique exercise for inner chest activation.",
+            "video": "https://www.example.com/svend-press-video",
+            "instructions": [
+              "Hold a weight plate between your hands at chest height.",
+              "Push the plate straight out while squeezing your chest.",
+              "Return to the starting position."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Parallel Bar Dips",
+            "description": "An effective exercise for chest and tricep development.",
+            "video": "https://www.example.com/parallel-bar-dips-video",
+            "instructions": [
+              "Use parallel bars and lean forward slightly.",
+              "Lower your body until your elbows are at 90 degrees.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          }
+        ]
+      }
+      ,
+      {
+        "id": 4,
+        "name": "Back",
+        "exercises": [
+          {
+            "name": "Pull-Ups",
+            "description": "Great for back and arm strength.",
+            "video": "https://www.example.com/pull-ups-video",
+            "instructions": [
+              "Grip the bar with your palms facing away.",
+              "Pull your chin above the bar and slowly lower yourself."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Bent-Over Rows",
+            "description": "A good compound exercise for the back.",
+            "video": "https://www.example.com/bent-over-rows-video",
+            "instructions": [
+              "Stand with knees slightly bent and a barbell in your hands.",
+              "Pull the bar towards your torso and lower it slowly."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Deadlifts",
+            "description": "A fundamental movement for overall back development.",
+            "video": "https://www.example.com/deadlifts-video",
+            "instructions": [
+              "Stand with your feet hip-width apart and grip the barbell.",
+              "Lift the bar by extending your hips and knees, keeping your back straight.",
+              "Lower the bar slowly back to the floor."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Lat Pulldowns",
+            "description": "Targets the lats for width and definition.",
+            "video": "https://www.example.com/lat-pulldowns-video",
+            "instructions": [
+              "Sit on the machine and grip the bar slightly wider than shoulder width.",
+              "Pull the bar down to your chest while keeping your torso upright.",
+              "Slowly return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Seated Cable Rows",
+            "description": "Isolates the mid-back for a detailed look.",
+            "video": "https://www.example.com/seated-cable-rows-video",
+            "instructions": [
+              "Sit on the machine with feet secured and grip the handle.",
+              "Pull the handle towards your torso while keeping your back straight.",
+              "Slowly return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Single-Arm Dumbbell Rows",
+            "description": "Focuses on unilateral back strength.",
+            "video": "https://www.example.com/single-arm-dumbbell-rows-video",
+            "instructions": [
+              "Place one knee and hand on a bench for support.",
+              "Grip a dumbbell with the opposite hand and pull it towards your torso.",
+              "Lower it slowly and repeat on the other side."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Face Pulls",
+            "description": "Targets the rear delts and upper back.",
+            "video": "https://www.example.com/face-pulls-video",
+            "instructions": [
+              "Set the cable pulley to head height and grip the rope.",
+              "Pull the rope towards your face, keeping your elbows high.",
+              "Return to the starting position slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "T-Bar Rows",
+            "description": "A great exercise for thickening the back.",
+            "video": "https://www.example.com/t-bar-rows-video",
+            "instructions": [
+              "Place your chest against the pad of the T-bar row machine.",
+              "Grip the handles and pull them towards your torso.",
+              "Slowly lower the weight back down."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Barbell Shrugs",
+            "description": "Targets the traps for a strong upper back.",
+            "video": "https://www.example.com/barbell-shrugs-video",
+            "instructions": [
+              "Hold a barbell with an overhand grip.",
+              "Shrug your shoulders as high as possible and pause briefly.",
+              "Lower your shoulders back down."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Good Mornings",
+            "description": "Strengthens the lower back and hamstrings.",
+            "video": "https://www.example.com/good-mornings-video",
+            "instructions": [
+              "Place a barbell on your shoulders and stand with feet hip-width apart.",
+              "Hinge forward at the hips while keeping your back straight.",
+              "Return to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Reverse Flys",
+            "description": "Targets the rear delts and upper back.",
+            "video": "https://www.example.com/reverse-flys-video",
+            "instructions": [
+              "Hold dumbbells in each hand and bend forward at the hips.",
+              "Raise your arms out to the sides until they are parallel to the floor.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Superman Exercise",
+            "description": "A bodyweight exercise for lower back strength.",
+            "video": "https://www.example.com/superman-exercise-video",
+            "instructions": [
+              "Lie face down on the floor with your arms extended forward.",
+              "Lift your arms, chest, and legs off the ground simultaneously.",
+              "Hold for a moment and lower them back down."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Hyperextensions",
+            "description": "Focuses on the lower back and glutes.",
+            "video": "https://www.example.com/hyperextensions-video",
+            "instructions": [
+              "Lie face down on a hyperextension bench.",
+              "Lower your torso and then lift it until your body is in a straight line.",
+              "Lower back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Farmer's Walk",
+            "description": "A functional exercise for grip and upper back strength.",
+            "video": "https://www.example.com/farmers-walk-video",
+            "instructions": [
+              "Hold a heavy dumbbell in each hand.",
+              "Walk forward while maintaining a straight posture.",
+              "Turn around and return to the starting point."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          }
+        ]
+      }
+      ,
+      {
+        "id": 5,
+        "name": "Glutes",
+        "exercises": [
+          {
+            "name": "Hip Thrusts",
+            "description": "A key exercise for building glute strength and size.",
+            "video": "https://www.example.com/hip-thrusts-video",
+            "instructions": [
+              "Sit on the ground with your back against a bench and a barbell over your hips.",
+              "Drive through your heels to lift your hips up until your body forms a straight line from shoulders to knees.",
+              "Lower your hips back down and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate", "Advanced"]
+          },
+          {
+            "name": "Glute Bridges",
+            "description": "A simple bodyweight exercise for glute activation.",
+            "video": "https://www.example.com/glute-bridges-video",
+            "instructions": [
+              "Lie on your back with knees bent and feet flat on the floor.",
+              "Push through your heels to lift your hips until your body forms a straight line.",
+              "Lower back down and repeat."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Bulgarian Split Squats",
+            "description": "A unilateral exercise that targets the glutes and quads.",
+            "video": "https://www.example.com/bulgarian-split-squats-video",
+            "instructions": [
+              "Stand a few feet in front of a bench with one foot resting on it.",
+              "Lower your body into a lunge position while keeping your front knee over your toes.",
+              "Push through your front foot to return to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Step-Ups",
+            "description": "An effective exercise for glute and leg strength.",
+            "video": "https://www.example.com/step-ups-video",
+            "instructions": [
+              "Place one foot on a bench or step.",
+              "Push through your heel to lift your body up and step down with the opposite leg.",
+              "Repeat on the other side."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Cable Kickbacks",
+            "description": "Targets the glutes with controlled resistance.",
+            "video": "https://www.example.com/cable-kickbacks-video",
+            "instructions": [
+              "Attach an ankle strap to a cable machine and fasten it to your ankle.",
+              "Kick your leg back and squeeze your glutes.",
+              "Slowly return to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Deadlifts",
+            "description": "A compound movement that engages the glutes and hamstrings.",
+            "video": "https://www.example.com/deadlifts-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart and grip a barbell.",
+              "Hinge at the hips and lift the barbell while keeping your back straight.",
+              "Lower the barbell back to the floor."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Kettlebell Swings",
+            "description": "A dynamic movement for glute power and endurance.",
+            "video": "https://www.example.com/kettlebell-swings-video",
+            "instructions": [
+              "Stand with feet slightly wider than shoulder-width apart.",
+              "Swing the kettlebell back between your legs and drive through your hips to swing it forward.",
+              "Let the momentum control the movement and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Lateral Band Walks",
+            "description": "Activates the glutes and improves stability.",
+            "video": "https://www.example.com/lateral-band-walks-video",
+            "instructions": [
+              "Place a resistance band around your thighs or ankles.",
+              "Step sideways while maintaining tension on the band.",
+              "Keep your knees slightly bent and repeat in the opposite direction."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Sumo Squats",
+            "description": "A variation of squats that targets the inner thighs and glutes.",
+            "video": "https://www.example.com/sumo-squats-video",
+            "instructions": [
+              "Stand with feet wider than shoulder-width apart and toes pointed outward.",
+              "Lower into a squat while keeping your chest upright.",
+              "Push through your heels to return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Romanian Deadlifts",
+            "description": "Focuses on the glutes and hamstrings with a lighter load.",
+            "video": "https://www.example.com/romanian-deadlifts-video",
+            "instructions": [
+              "Hold a barbell with a shoulder-width grip.",
+              "Hinge at the hips and lower the barbell while keeping your back straight.",
+              "Return to the starting position by driving through your hips."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Donkey Kicks",
+            "description": "A bodyweight exercise to isolate the glutes.",
+            "video": "https://www.example.com/donkey-kicks-video",
+            "instructions": [
+              "Start on all fours with knees under hips and hands under shoulders.",
+              "Lift one leg back and up while keeping the knee bent.",
+              "Lower the leg and repeat on the other side."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Fire Hydrants",
+            "description": "Targets the side glutes for added stability.",
+            "video": "https://www.example.com/fire-hydrants-video",
+            "instructions": [
+              "Start on all fours with knees under hips and hands under shoulders.",
+              "Lift one leg out to the side while keeping the knee bent.",
+              "Return to the starting position and repeat on the other side."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Reverse Lunges",
+            "description": "Builds glute and leg strength while improving balance.",
+            "video": "https://www.example.com/reverse-lunges-video",
+            "instructions": [
+              "Step back with one leg into a lunge position.",
+              "Push through your front foot to return to the starting position.",
+              "Repeat on the other side."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          }
+        ]
+      }
+      ,
+      {
+        "id": 6,
+        "name": "Quadriceps",
+        "exercises": [
+          {
+            "name": "Squats",
+            "description": "A fundamental movement for quad and overall leg strength.",
+            "video": "https://www.example.com/squats-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart.",
+              "Lower your body by bending your knees and hips until thighs are parallel to the floor.",
+              "Push through your heels to return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Lunges",
+            "description": "A unilateral exercise that focuses on the quads.",
+            "video": "https://www.example.com/lunges-video",
+            "instructions": [
+              "Step forward with one leg and lower your body until both knees are at 90 degrees.",
+              "Push through your front foot to return to the starting position.",
+              "Repeat with the other leg."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Leg Press",
+            "description": "Targets the quads, glutes, and hamstrings using a leg press machine.",
+            "video": "https://www.example.com/leg-press-video",
+            "instructions": [
+              "Sit on the leg press machine with feet shoulder-width apart on the platform.",
+              "Push the platform upward without locking your knees.",
+              "Slowly lower the platform back down."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Step-Ups",
+            "description": "A functional exercise for quad and leg strength.",
+            "video": "https://www.example.com/step-ups-video",
+            "instructions": [
+              "Place one foot on a bench or step.",
+              "Push through your heel to lift your body up.",
+              "Step down and repeat with the other leg."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Bulgarian Split Squats",
+            "description": "A challenging unilateral exercise for quad isolation.",
+            "video": "https://www.example.com/bulgarian-split-squats-video",
+            "instructions": [
+              "Place one foot on a bench behind you.",
+              "Lower your body into a lunge position while keeping your front knee over your toes.",
+              "Push through your front foot to return to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Front Squats",
+            "description": "A squat variation that emphasizes the quads.",
+            "video": "https://www.example.com/front-squats-video",
+            "instructions": [
+              "Hold a barbell across the front of your shoulders.",
+              "Lower your body into a squat, keeping your torso upright.",
+              "Push through your heels to return to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Wall Sits",
+            "description": "An isometric exercise that challenges quad endurance.",
+            "video": "https://www.example.com/wall-sits-video",
+            "instructions": [
+              "Stand with your back against a wall and lower yourself into a seated position.",
+              "Hold the position for as long as possible.",
+              "Stand back up and rest before repeating."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Sissy Squats",
+            "description": "An advanced bodyweight exercise for quad isolation.",
+            "video": "https://www.example.com/sissy-squats-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart and lean backward while bending your knees.",
+              "Lower your body while keeping your torso straight.",
+              "Return to the starting position by extending your knees."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Leg Extensions",
+            "description": "Isolates the quads using a leg extension machine.",
+            "video": "https://www.example.com/leg-extensions-video",
+            "instructions": [
+              "Sit on the leg extension machine with your feet under the padded bar.",
+              "Extend your legs until they are straight.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Box Jumps",
+            "description": "A plyometric exercise that builds quad power.",
+            "video": "https://www.example.com/box-jumps-video",
+            "instructions": [
+              "Stand in front of a sturdy box or platform.",
+              "Jump onto the box, landing softly with both feet.",
+              "Step or jump back down and repeat."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Hack Squats",
+            "description": "A machine-assisted squat variation targeting the quads.",
+            "video": "https://www.example.com/hack-squats-video",
+            "instructions": [
+              "Position yourself in the hack squat machine with your shoulders under the pads.",
+              "Lower your body until thighs are parallel to the platform.",
+              "Push through your heels to return to the starting position."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Walking Lunges",
+            "description": "A functional movement for quad strength and stability.",
+            "video": "https://www.example.com/walking-lunges-video",
+            "instructions": [
+              "Step forward into a lunge and then step forward with the other leg.",
+              "Continue moving forward, alternating legs with each step."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Pistol Squats",
+            "description": "A single-leg squat for advanced quad strength.",
+            "video": "https://www.example.com/pistol-squats-video",
+            "instructions": [
+              "Stand on one leg with the other leg extended in front of you.",
+              "Lower your body into a squat position while keeping the extended leg straight.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Split Squats",
+            "description": "An effective quad-building exercise.",
+            "video": "https://www.example.com/split-squats-video",
+            "instructions": [
+              "Stand in a staggered stance with one foot forward and one back.",
+              "Lower your body into a lunge position.",
+              "Push through your front foot to return to the starting position."
+            ],
+            "intensity": ["Intermediate"]
+          }
+        ]
+      }
+      
+      ,
+      {
+        "id": 7,
+        "name": "Hamstrings",
+        "exercises": [
+          {
+            "name": "Romanian Deadlifts",
+            "description": "Targets hamstrings and glutes effectively.",
+            "video": "https://www.example.com/romanian-deadlifts-video",
+            "instructions": [
+              "Hold a barbell in front of your thighs.",
+              "Hinge at the hips to lower the bar down your legs while keeping your back straight.",
+              "Return to the starting position by extending your hips."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Hamstring Curls",
+            "description": "Isolates hamstrings using a machine.",
+            "video": "https://www.example.com/hamstring-curls-video",
+            "instructions": [
+              "Lie face down on the curl machine with legs under the padded bar.",
+              "Curl your legs toward your glutes.",
+              "Slowly lower them back down."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Stiff-Leg Deadlifts",
+            "description": "A variation of the deadlift focusing on hamstrings.",
+            "video": "https://www.example.com/stiff-leg-deadlifts-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart holding a barbell.",
+              "Lower the barbell by hinging at the hips while keeping your legs straight.",
+              "Return to the starting position by engaging your hamstrings."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Glute-Ham Raises",
+            "description": "An advanced bodyweight exercise for hamstrings.",
+            "video": "https://www.example.com/glute-ham-raises-video",
+            "instructions": [
+              "Secure your feet under a stable platform.",
+              "Lower your torso while keeping your knees on the pad.",
+              "Pull yourself back up using your hamstrings."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Good Mornings",
+            "description": "Strengthens hamstrings and lower back.",
+            "video": "https://www.example.com/good-mornings-video",
+            "instructions": [
+              "Place a barbell across your shoulders.",
+              "Hinge at your hips to lower your torso forward.",
+              "Return to the starting position by engaging your hamstrings."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Kettlebell Swings",
+            "description": "A dynamic movement targeting hamstrings and glutes.",
+            "video": "https://www.example.com/kettlebell-swings-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart holding a kettlebell.",
+              "Swing the kettlebell between your legs by hinging at your hips.",
+              "Thrust your hips forward to swing the kettlebell up to chest height."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Single-Leg Romanian Deadlifts",
+            "description": "A unilateral movement targeting hamstrings and balance.",
+            "video": "https://www.example.com/single-leg-romanian-deadlifts-video",
+            "instructions": [
+              "Hold a dumbbell in one hand.",
+              "Hinge at the hips while lifting one leg behind you.",
+              "Return to the starting position and repeat."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Nordic Hamstring Curls",
+            "description": "An intense bodyweight exercise for hamstring strength.",
+            "video": "https://www.example.com/nordic-hamstring-curls-video",
+            "instructions": [
+              "Kneel with feet secured under a stable object.",
+              "Lower your torso forward slowly.",
+              "Push yourself back up using your hamstrings."
+            ],
+            "intensity": ["Advanced"]
+          },
+          {
+            "name": "Bridge Walkouts",
+            "description": "Targets hamstrings through dynamic movement.",
+            "video": "https://www.example.com/bridge-walkouts-video",
+            "instructions": [
+              "Start in a glute bridge position.",
+              "Walk your feet out one step at a time.",
+              "Walk them back in and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Cable Pull-Throughs",
+            "description": "Targets hamstrings using a cable machine.",
+            "video": "https://www.example.com/cable-pull-throughs-video",
+            "instructions": [
+              "Face away from a cable machine holding the rope attachment between your legs.",
+              "Hinge at the hips to pull the rope through your legs.",
+              "Return to the starting position."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Reverse Lunges",
+            "description": "Strengthens hamstrings and improves stability.",
+            "video": "https://www.example.com/reverse-lunges-video",
+            "instructions": [
+              "Step backward into a lunge position.",
+              "Push through your front heel to return to the starting position.",
+              "Repeat with the other leg."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Swiss Ball Hamstring Curls",
+            "description": "Uses a stability ball to isolate hamstrings.",
+            "video": "https://www.example.com/swiss-ball-hamstring-curls-video",
+            "instructions": [
+              "Lie on your back with heels on a stability ball.",
+              "Lift your hips into a bridge position.",
+              "Roll the ball toward your glutes and then back out."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Deadlifts",
+            "description": "A compound movement that strengthens the hamstrings and posterior chain.",
+            "video": "https://www.example.com/deadlifts-video",
+            "instructions": [
+              "Stand with feet shoulder-width apart and a barbell on the floor.",
+              "Hinge at the hips to lift the barbell to thigh height.",
+              "Lower the barbell back to the ground."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Step-Ups with Hamstring Focus",
+            "description": "Targets hamstrings using a step or bench.",
+            "video": "https://www.example.com/step-ups-hamstring-focus-video",
+            "instructions": [
+              "Place one foot on a bench.",
+              "Push through your heel to lift your body.",
+              "Step down and repeat with the other leg."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          }
+        ]
+      }
+      
+      ,
+      {
+        "id": 8,
+        "name": "Shoulders",
+        "exercises": [
+          {
+            "name": "Overhead Press",
+            "description": "A fundamental shoulder-building exercise.",
+            "video": "https://www.example.com/overhead-press-video",
+            "instructions": [
+              "Hold a barbell or dumbbells at shoulder height.",
+              "Press the weight overhead until arms are fully extended.",
+              "Lower the weight back to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Lateral Raises",
+            "description": "Isolates the lateral deltoid muscles.",
+            "video": "https://www.example.com/lateral-raises-video",
+            "instructions": [
+              "Hold a dumbbell in each hand by your sides.",
+              "Raise your arms out to the sides until shoulder height.",
+              "Lower the dumbbells slowly and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Front Raises",
+            "description": "Focuses on the front deltoid muscles.",
+            "video": "https://www.example.com/front-raises-video",
+            "instructions": [
+              "Hold a dumbbell in each hand in front of your thighs.",
+              "Raise the dumbbells in front of you to shoulder height.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Arnold Press",
+            "description": "A variation of the overhead press for all shoulder heads.",
+            "video": "https://www.example.com/arnold-press-video",
+            "instructions": [
+              "Hold dumbbells in front of your chest with palms facing you.",
+              "Press the weights overhead while rotating your wrists outward.",
+              "Lower back to the starting position and repeat."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Face Pulls",
+            "description": "Great for rear delts and upper back.",
+            "video": "https://www.example.com/face-pulls-video",
+            "instructions": [
+              "Attach a rope to a cable machine at chest height.",
+              "Pull the rope towards your face while keeping elbows high.",
+              "Slowly return to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Dumbbell Shrugs",
+            "description": "Targets the traps and upper shoulders.",
+            "video": "https://www.example.com/dumbbell-shrugs-video",
+            "instructions": [
+              "Hold a dumbbell in each hand at your sides.",
+              "Shrug your shoulders up as high as possible.",
+              "Lower your shoulders back down slowly."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Rear Delt Fly",
+            "description": "Focuses on the rear delts and upper back.",
+            "video": "https://www.example.com/rear-delt-fly-video",
+            "instructions": [
+              "Hold dumbbells and bend forward at the hips.",
+              "Raise your arms out to the sides until they are parallel to the ground.",
+              "Lower them slowly and repeat."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Push Press",
+            "description": "A power movement for shoulder and overall strength.",
+            "video": "https://www.example.com/push-press-video",
+            "instructions": [
+              "Hold a barbell or dumbbells at shoulder height.",
+              "Slightly bend your knees and drive the weight overhead using your legs and shoulders.",
+              "Lower back to the starting position."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Cable Lateral Raises",
+            "description": "Provides constant tension for lateral delts.",
+            "video": "https://www.example.com/cable-lateral-raises-video",
+            "instructions": [
+              "Attach a handle to the cable machine at the lowest setting.",
+              "Grab the handle with one hand and stand to the side.",
+              "Lift the handle outward to shoulder height and lower slowly."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Seated Dumbbell Press",
+            "description": "A seated variation of the overhead press.",
+            "video": "https://www.example.com/seated-dumbbell-press-video",
+            "instructions": [
+              "Sit on a bench with dumbbells at shoulder height.",
+              "Press the dumbbells overhead until arms are fully extended.",
+              "Lower back down and repeat."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Upright Rows",
+            "description": "Targets the traps and front delts.",
+            "video": "https://www.example.com/upright-rows-video",
+            "instructions": [
+              "Hold a barbell or dumbbells in front of your thighs.",
+              "Pull the weight up towards your chin, keeping elbows high.",
+              "Lower back down slowly."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Incline Front Raises",
+            "description": "Adds more challenge to the front delts.",
+            "video": "https://www.example.com/incline-front-raises-video",
+            "instructions": [
+              "Lie on an incline bench holding dumbbells in front of your body.",
+              "Raise the dumbbells to shoulder height.",
+              "Lower them back down slowly."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Landmine Press",
+            "description": "A shoulder-friendly pressing variation.",
+            "video": "https://www.example.com/landmine-press-video",
+            "instructions": [
+              "Place one end of a barbell in a landmine attachment or corner.",
+              "Hold the barbell with one hand at shoulder height.",
+              "Press the barbell upward at an angle."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Pike Push-Ups",
+            "description": "A bodyweight exercise for shoulders.",
+            "video": "https://www.example.com/pike-push-ups-video",
+            "instructions": [
+              "Get into a pike position with hips high and hands on the floor.",
+              "Lower your head towards the floor.",
+              "Push back up to the starting position."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          }
+        ]
+      }
+      
+      ,
+      {
+        "id": 9,
+        "name": "Calves",
+        "exercises": [
+          {
+            "name": "Standing Calf Raises",
+            "description": "The most basic and effective calf exercise.",
+            "video": "https://www.example.com/standing-calf-raises-video",
+            "instructions": [
+              "Stand with your feet shoulder-width apart, with the balls of your feet on an elevated surface.",
+              "Push through the balls of your feet to raise your heels as high as possible.",
+              "Lower your heels back down slowly and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Seated Calf Raises",
+            "description": "Focuses on the soleus muscle of the calves.",
+            "video": "https://www.example.com/seated-calf-raises-video",
+            "instructions": [
+              "Sit on a bench with a weight placed on your knees or using a seated calf raise machine.",
+              "Push through the balls of your feet to raise your heels.",
+              "Lower your heels back down slowly and repeat."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Donkey Calf Raises",
+            "description": "A variation that targets both calf muscles effectively.",
+            "video": "https://www.example.com/donkey-calf-raises-video",
+            "instructions": [
+              "Bend forward at the hips, resting your hands on a bench or machine.",
+              "With your feet on a raised surface, push through the balls of your feet to raise your heels.",
+              "Slowly lower your heels back down and repeat."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Calf Press on Leg Press Machine",
+            "description": "A machine-based exercise that targets the calves.",
+            "video": "https://www.example.com/calf-press-leg-press-machine-video",
+            "instructions": [
+              "Sit down on the leg press machine with your feet placed on the footplate, ensuring your toes are pointing forward.",
+              "Push the weight up with the balls of your feet, extending your ankles.",
+              "Lower the weight slowly and repeat."
+            ],
+            "intensity": ["Intermediate"]
+          },
+          {
+            "name": "Box Jumps",
+            "description": "A plyometric exercise that works your calves along with your legs.",
+            "video": "https://www.example.com/box-jumps-video",
+            "instructions": [
+              "Stand in front of a sturdy box or platform.",
+              "Jump explosively with both feet onto the box, using your calves to push off.",
+              "Land softly on the box, then step down and repeat."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Jump Rope",
+            "description": "A cardiovascular exercise that heavily engages the calves.",
+            "video": "https://www.example.com/jump-rope-video",
+            "instructions": [
+              "Hold the jump rope handles and position the rope behind you.",
+              "Swing the rope over your head and jump as it passes under your feet.",
+              "Land lightly on the balls of your feet and continue jumping."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Walking Calf Raises",
+            "description": "A dynamic movement for calves that also improves balance.",
+            "video": "https://www.example.com/walking-calf-raises-video",
+            "instructions": [
+              "Stand tall and walk forward on the balls of your feet.",
+              "Raise your heels with each step, focusing on pushing through the calves.",
+              "Repeat for a set distance or number of steps."
+            ],
+            "intensity": ["Beginner", "Intermediate"]
+          },
+          {
+            "name": "Tibialis Raises",
+            "description": "Targets the front of the lower leg, complementing calf exercises.",
+            "video": "https://www.example.com/tibialis-raises-video",
+            "instructions": [
+              "Stand with your heels on the ground and toes pointed upward.",
+              "Lift your toes towards your shins, engaging the tibialis muscle.",
+              "Slowly lower your toes back to the ground and repeat."
+            ],
+            "intensity": ["Beginner"]
+          },
+          {
+            "name": "Smith Machine Calf Raises",
+            "description": "A controlled calf exercise using the Smith machine for added weight.",
+            "video": "https://www.example.com/smith-machine-calf-raises-video",
+            "instructions": [
+              "Set up the Smith machine with the bar at shoulder height.",
+              "Place the balls of your feet on a raised platform and position the bar across your shoulders.",
+              "Push through the balls of your feet to raise your heels and slowly lower them back down."
+            ],
+            "intensity": ["Intermediate", "Advanced"]
+          },
+          {
+            "name": "Single-Leg Calf Raises",
+            "description": "A unilateral calf exercise that enhances balance and strength.",
+            "video": "https://www.example.com/single-leg-calf-raises-video",
+            "instructions": [
+              "Stand on one foot on a raised surface.",
+              "Push through the ball of your foot to raise your heel.",
+              "Lower back down slowly and repeat on the other leg."
+            ],
+            "intensity": ["Intermediate"]
+          }
+        ]
+      }
+      ,
+      {
+        "id": 10,
+  "name": "Abdomen",
+  "exercises": [
+    {
+      "name": "Crunches",
+      "description": "A basic core exercise for strengthening the abs.",
+      "video": "https://www.example.com/crunches-video",
+      "instructions": [
+        "Lie flat on your back with your knees bent and feet on the floor.",
+        "Place your hands behind your head or crossed over your chest.",
+        "Engage your core and lift your upper body off the ground, then lower back down."
+      ],
+      "intensity": ["Beginner"]
+    },
+    {
+      "name": "Plank",
+      "description": "A core stabilization exercise that targets the abs.",
+      "video": "https://www.example.com/plank-video",
+      "instructions": [
+        "Get into a push-up position but with your weight on your forearms.",
+        "Keep your body in a straight line from head to heels.",
+        "Hold this position for as long as possible while engaging your core."
+      ],
+      "intensity": ["Beginner", "Intermediate"]
+    },
+    {
+      "name": "Leg Raises",
+      "description": "Targets the lower abs.",
+      "video": "https://www.example.com/leg-raises-video",
+      "instructions": [
+        "Lie flat on your back with your legs extended.",
+        "Lift your legs up towards the ceiling while keeping them straight.",
+        "Lower your legs back down without touching the ground and repeat."
+      ],
+      "intensity": ["Beginner", "Intermediate"]
+    },
+    {
+      "name": "Russian Twists",
+      "description": "A twisting motion to engage the obliques and abs.",
+      "video": "https://www.example.com/russian-twists-video",
+      "instructions": [
+        "Sit on the floor with your knees bent and feet flat.",
+        "Lean back slightly, keeping your back straight, and hold a weight or just clasp your hands together.",
+        "Twist your torso from side to side, tapping the ground with your hands."
+      ],
+      "intensity": ["Beginner", "Intermediate"]
+    },
+    {
+      "name": "Bicycle Crunches",
+      "description": "A dynamic exercise that works the entire core.",
+      "video": "https://www.example.com/bicycle-crunches-video",
+      "instructions": [
+        "Lie on your back with your knees bent and hands behind your head.",
+        "Bring your right elbow to your left knee while straightening your right leg.",
+        "Alternate sides in a pedaling motion while keeping your core engaged."
+      ],
+      "intensity": ["Intermediate"]
+    },
+    {
+      "name": "Mountain Climbers",
+      "description": "A full-body exercise that targets the abs and improves cardiovascular endurance.",
+      "video": "https://www.example.com/mountain-climbers-video",
+      "instructions": [
+        "Get into a plank position with your hands directly under your shoulders.",
+        "Bring one knee towards your chest, then quickly alternate legs in a running motion."
+      ],
+      "intensity": ["Intermediate", "Advanced"]
+    },
+    {
+      "name": "V-Ups",
+      "description": "An advanced abdominal exercise for overall core strength.",
+      "video": "https://www.example.com/v-ups-video",
+      "instructions": [
+        "Lie flat on your back with your arms extended above your head.",
+        "Simultaneously raise your upper body and legs, forming a V shape.",
+        "Lower back down slowly and repeat."
+      ],
+      "intensity": ["Advanced"]
+    },
+    {
+      "name": "Flutter Kicks",
+      "description": "An effective exercise for the lower abs.",
+      "video": "https://www.example.com/flutter-kicks-video",
+      "instructions": [
+        "Lie flat on your back with your legs extended.",
+        "Lift your legs slightly off the floor and alternate kicking them up and down."
+      ],
+      "intensity": ["Intermediate"]
+    },
+    {
+      "name": "Hanging Leg Raises",
+      "description": "A great exercise for the lower abs and core stability.",
+      "video": "https://www.example.com/hanging-leg-raises-video",
+      "instructions": [
+        "Hang from a pull-up bar with your legs extended.",
+        "Lift your legs towards your chest, keeping them straight.",
+        "Lower your legs back down without swinging and repeat."
+      ],
+      "intensity": ["Advanced"]
+    },
+    {
+      "name": "Dead Bugs",
+      "description": "A great exercise to improve core stability and control.",
+      "video": "https://www.example.com/dead-bugs-video",
+      "instructions": [
+        "Lie on your back with your arms extended towards the ceiling and your knees bent at 90 degrees.",
+        "Lower your right arm and left leg towards the floor while keeping your lower back pressed into the ground.",
+        "Return to the starting position and repeat on the other side."
+      ],
+      "intensity": ["Beginner", "Intermediate"]
+    }
+        ]
+      }
+      
+  ]
+  
