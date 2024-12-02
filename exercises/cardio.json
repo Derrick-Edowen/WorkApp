@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "name": "Walking",
+    "description": "A low-impact cardio exercise, great for beginners and low endurance.",
+    "enduranceLevel": "Low Endurance",
+    "duration": "15-20 min",
+    "calorieBurn": "80-100 calories",
+    "video": "https://example.com/video/walking.mp4"
+  },
+  {
+    "id": 2,
+    "name": "Jogging",
+    "description": "Moderate intensity running at a steady pace. Good for building basic stamina.",
+    "enduranceLevel": "Low Endurance",
+    "duration": "20-25 min",
+    "calorieBurn": "150-200 calories",
+    "video": "https://example.com/video/jogging.mp4"
+  },
+  {
+    "id": 3,
+    "name": "Cycling",
+    "description": "Low to moderate intensity cycling. Great for overall cardiovascular health.",
+    "enduranceLevel": "Low Endurance",
+    "duration": "20-30 min",
+    "calorieBurn": "150-250 calories",
+    "video": "https://example.com/video/cycling.mp4"
+  },
+  {
+    "id": 4,
+    "name": "Interval Walking",
+    "description": "Walk at a brisk pace, alternating with short, faster sprints to increase intensity.",
+    "enduranceLevel": "Medium Endurance",
+    "duration": "20-25 min",
+    "calorieBurn": "180-220 calories",
+    "video": "https://example.com/video/interval-walking.mp4"
+  },
+  {
+    "id": 5,
+    "name": "Sprints",
+    "description": "Short bursts of maximum intensity running followed by rest periods. Boosts speed and endurance.",
+    "enduranceLevel": "Medium Endurance",
+    "duration": "20-25 min",
+    "calorieBurn": "250-300 calories",
+    "video": "https://example.com/video/sprints.mp4"
+  },
+  {
+    "id": 6,
+    "name": "Jump Rope",
+    "description": "Jumping rope at a consistent pace for cardiovascular endurance and coordination.",
+    "enduranceLevel": "Medium Endurance",
+    "duration": "20-30 min",
+    "calorieBurn": "200-300 calories",
+    "video": "https://example.com/video/jump-rope.mp4"
+  },
+  {
+    "id": 7,
+    "name": "Circuit Training",
+    "description": "A series of exercises targeting different muscle groups with minimal rest in between.",
+    "enduranceLevel": "Medium Endurance",
+    "duration": "25-30 min",
+    "calorieBurn": "250-350 calories",
+    "video": "https://example.com/video/circuit-training.mp4"
+  },
+  {
+    "id": 8,
+    "name": "Sprints",
+    "description": "Short bursts of maximum intensity running followed by rest periods. Boosts speed and endurance.",
+    "enduranceLevel": "High Endurance",
+    "duration": "30 min",
+    "calorieBurn": "300-400 calories",
+    "video": "https://example.com/video/sprints-high.mp4"
+  },
+  {
+    "id": 9,
+    "name": "HIIT (High Intensity Interval Training)",
+    "description": "Alternating between short, intense bursts of exercise and rest. Boosts overall fitness levels.",
+    "enduranceLevel": "High Endurance",
+    "duration": "25-30 min",
+    "calorieBurn": "300-450 calories",
+    "video": "https://example.com/video/hiit.mp4"
+  },
+  {
+    "id": 10,
+    "name": "Stair Climbing",
+    "description": "Running or walking up stairs at a high intensity to strengthen legs and improve endurance.",
+    "enduranceLevel": "High Endurance",
+    "duration": "30 min",
+    "calorieBurn": "350-500 calories",
+    "video": "https://example.com/video/stair-climbing.mp4"
+  },
+  {
+    "id": 11,
+    "name": "Cycling",
+    "description": "Moderate to high-intensity cycling. Great for building leg strength and endurance.",
+    "enduranceLevel": "High Endurance",
+    "duration": "30 min",
+    "calorieBurn": "300-400 calories",
+    "video": "https://example.com/video/cycling-high.mp4"
+  },
+  {
+    "id": 12,
+    "name": "Rowing",
+    "description": "Full-body workout that improves cardiovascular endurance and tones muscles.",
+    "enduranceLevel": "High Endurance",
+    "duration": "25-30 min",
+    "calorieBurn": "250-350 calories",
+    "video": "https://example.com/video/rowing.mp4"
+  }
+]
+
+  
+  
