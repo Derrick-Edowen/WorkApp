@@ -1,0 +1,115 @@
+[
+    {
+      "id": 1,
+      "name": "Leg Swings",
+      "description": "Swing one leg forward and backward to loosen up the hips and hamstrings.",
+      "category": "Dynamic",
+      "durationRepetition": "10 swings per leg",
+      "video": "https://example.com/video/leg-swings.mp4"
+    },
+    {
+      "id": 2,
+      "name": "Arm Circles",
+      "description": "Make circular movements with your arms to warm up the shoulders.",
+      "category": "Dynamic",
+      "durationRepetition": "10 circles forward, 10 circles backward",
+      "video": "https://example.com/video/arm-circles.mp4"
+    },
+    {
+      "id": 3,
+      "name": "Walking Lunges with Twist",
+      "description": "Step forward into a lunge, twist your torso toward the leading leg to stretch your hips and core.",
+      "category": "Dynamic",
+      "durationRepetition": "10 lunges per side",
+      "video": "https://example.com/video/walking-lunges.mp4"
+    },
+    {
+      "id": 4,
+      "name": "High Knees",
+      "description": "Raise each knee alternately to hip level while jogging in place.",
+      "category": "Dynamic",
+      "durationRepetition": "30 seconds",
+      "video": "https://example.com/video/high-knees.mp4"
+    },
+    {
+      "id": 5,
+      "name": "Hamstring Stretch",
+      "description": "Bend forward from your hips to touch your toes, stretching the hamstrings.",
+      "category": "Static",
+      "durationRepetition": "Hold for 20-30 seconds",
+      "video": "https://example.com/video/hamstring-stretch.mp4"
+    },
+    {
+      "id": 6,
+      "name": "Triceps Stretch",
+      "description": "Reach one arm overhead and bend it to touch your upper back, using the other hand to assist.",
+      "category": "Static",
+      "durationRepetition": "Hold for 15-20 seconds per arm",
+      "video": "https://example.com/video/triceps-stretch.mp4"
+    },
+    {
+      "id": 7,
+      "name": "Butterfly Stretch",
+      "description": "Sit with your feet pressed together and knees out to stretch the hips and inner thighs.",
+      "category": "Static",
+      "durationRepetition": "Hold for 20-30 seconds",
+      "video": "https://example.com/video/butterfly-stretch.mp4"
+    },
+    {
+      "id": 8,
+      "name": "Cat-Cow Pose",
+      "description": "Alternate between arching your back upward and dipping it downward to stretch the spine.",
+      "category": "Static",
+      "durationRepetition": "5 cycles of cat-cow (10 seconds per pose)",
+      "video": "https://example.com/video/cat-cow.mp4"
+    },
+    {
+      "id": 9,
+      "name": "Child’s Pose",
+      "description": "Sit back on your heels and stretch your arms forward to relax the back and shoulders.",
+      "category": "Static",
+      "durationRepetition": "Hold for 30 seconds",
+      "video": "https://example.com/video/childs-pose.mp4"
+    },
+    {
+      "id": 10,
+      "name": "Downward Dog",
+      "description": "Form an inverted V-shape with your body, stretching the hamstrings, calves, and shoulders.",
+      "category": "Yoga-Inspired",
+      "durationRepetition": "Hold for 20-30 seconds",
+      "video": "https://example.com/video/downward-dog.mp4"
+    },
+    {
+      "id": 11,
+      "name": "Warrior Pose",
+      "description": "Step one leg forward, bend the knee, and stretch your arms overhead.",
+      "category": "Yoga-Inspired",
+      "durationRepetition": "Hold for 20 seconds per side",
+      "video": "https://example.com/video/warrior-pose.mp4"
+    },
+    {
+      "id": 12,
+      "name": "Pigeon Pose",
+      "description": "Stretch one leg straight back and place the other in front with a bent knee to stretch the hips.",
+      "category": "Yoga-Inspired",
+      "durationRepetition": "Hold for 20-30 seconds per side",
+      "video": "https://example.com/video/pigeon-pose.mp4"
+    },
+    {
+      "id": 13,
+      "name": "Cobra Pose",
+      "description": "Lie on your stomach and press your upper body upward to stretch the chest and spine.",
+      "category": "Yoga-Inspired",
+      "durationRepetition": "Hold for 20 seconds",
+      "video": "https://example.com/video/cobra-pose.mp4"
+    },
+    {
+      "id": 14,
+      "name": "Forward Fold",
+      "description": "Bend forward from the hips, reaching for your toes to stretch the lower back and hamstrings.",
+      "category": "Yoga-Inspired",
+      "durationRepetition": "Hold for 20-30 seconds",
+      "video": "https://example.com/video/forward-fold.mp4"
+    }
+  ]
+  

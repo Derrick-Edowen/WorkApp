@@ -9,7 +9,7 @@ type RootStackParamList = {
   'resistance-training': undefined;
   cardio: undefined;
   stretching: undefined;
-  other: undefined;
+  challenge: undefined;
 };
 
 
@@ -24,7 +24,7 @@ const workoutCategories: Category[] = [
   { id: '1', name: 'Resistance Training', color: '#e6550b', icon: <Ionicons name="barbell" size={60} color="white" /> },
   { id: '2', name: 'Cardio', color: '#0b80e6', icon: <Ionicons name="walk" size={60} color="white" /> },
   { id: '3', name: 'Stretching', color: '#1f911f', icon: <Ionicons name="heart-outline" size={60} color="white" /> },
-  { id: '4', name: 'Other', color: '#920be6', icon: <Ionicons name="pulse" size={60} color="white" /> },
+  { id: '4', name: 'Daily Challenge', color: '#920be6', icon: <Ionicons name="pulse" size={60} color="white" /> },
 
 ];
 
@@ -53,13 +53,14 @@ const WorkoutsScreen: React.FC = () => {
       case 'Stretching':
         router.push('/stretching'); // Navigate to Stretching screen
         break;
-      case 'Other':
-        router.push('/other'); // Navigate to Other screen
+      case 'Daily Challenge': // Corrected spelling
+        router.push('/challenge'); // Navigate to Challenge screen
         break;
       default:
         break;
     }
   };
+  
   
   
   

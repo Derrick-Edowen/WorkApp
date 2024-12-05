@@ -51,6 +51,7 @@ const CardioScreen = () => {
       >
         <TouchableOpacity onPress={() => handleCardPress('Low Endurance')}>
           <Text style={styles.cardText}>Low Endurance</Text>
+          <Text style={styles.miniText}>Walking, Jogging and Spinning</Text>
         </TouchableOpacity>
       </Animated.View>
 
@@ -64,6 +65,7 @@ const CardioScreen = () => {
       >
         <TouchableOpacity onPress={() => handleCardPress('Medium Endurance')}>
           <Text style={styles.cardText}>Medium Endurance</Text>
+          <Text style={styles.miniText}>Sprints, Jump Rope, and Circuits</Text>
         </TouchableOpacity>
       </Animated.View>
 
@@ -77,6 +79,7 @@ const CardioScreen = () => {
       >
         <TouchableOpacity onPress={() => handleCardPress('High Endurance')}>
           <Text style={styles.cardText}>High Endurance</Text>
+          <Text style={styles.miniText}>Climbing, HIIT, and Swimming</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
@@ -110,6 +113,13 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 18,
     fontWeight: 'bold',
+    textAlign:'center',
+    color: '#fff', // White text for contrast
+  },
+  miniText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign:'center',
     color: '#fff', // White text for contrast
   },
   lowEndurance: {

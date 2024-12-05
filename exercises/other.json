@@ -1,0 +1,161 @@
+{
+    "dailyChallenges": {
+      "Beginner": [
+        {
+          "id": 1,
+          "name": "Beginner Challenge",
+          "description": "A gentle mix of exercises to get you started.",
+          "program": {
+            "resistance": "5 Push-Ups",
+            "cardio": "10 Jumping Jacks",
+            "stretching": "15-Second Hamstring Stretch"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Beginner Challenge",
+          "description": "An easy introduction to fitness.",
+          "program": {
+            "resistance": "10 Bodyweight Squats",
+            "cardio": "15 Marches in Place",
+            "stretching": "20-Second Shoulder Stretch"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Beginner Challenge",
+          "description": "Simple exercises to wake up your body.",
+          "program": {
+            "resistance": "5 Dumbbell Rows",
+            "cardio": "10 Side Steps",
+            "stretching": "15-Second Cat-Cow Stretch"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Beginner Challenge",
+          "description": "A balanced workout for beginners.",
+          "program": {
+            "resistance": "8 Push-Ups",
+            "cardio": "15 High Knees",
+            "stretching": "20-Second Quad Stretch"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Beginner Challenge",
+          "description": "Great for a morning start.",
+          "program": {
+            "resistance": "6 Tricep Dips",
+            "cardio": "20 Step-Touches",
+            "stretching": "15-Second Child’s Pose"
+          }
+        }
+      ],
+      "Intermediate": [
+        {
+          "id": 1,
+          "name": "Intermediate Challenge",
+          "description": "Moderate-intensity exercises to push you further.",
+          "program": {
+            "resistance": "15 Push-Ups",
+            "cardio": "20 Mountain Climbers",
+            "stretching": "30-Second Hip Flexor Stretch"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Intermediate Challenge",
+          "description": "A great mix for building endurance.",
+          "program": {
+            "resistance": "12 Dumbbell Deadlifts",
+            "cardio": "25 Skater Hops",
+            "stretching": "20-Second Cobra Stretch"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Intermediate Challenge",
+          "description": "Ideal for those looking to increase intensity.",
+          "program": {
+            "resistance": "20 Bodyweight Squats",
+            "cardio": "15 Burpees",
+            "stretching": "30-Second Downward Dog"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Intermediate Challenge",
+          "description": "Enhance your strength and endurance.",
+          "program": {
+            "resistance": "10 Pull-Ups",
+            "cardio": "30 Jumping Jacks",
+            "stretching": "25-Second Pigeon Pose"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Intermediate Challenge",
+          "description": "A balanced workout with some challenge.",
+          "program": {
+            "resistance": "15 Dumbbell Presses",
+            "cardio": "20 Step-Ups",
+            "stretching": "20-Second Butterfly Stretch"
+          }
+        }
+      ],
+      "Advanced": [
+        {
+          "id": 1,
+          "name": "Advanced Challenge",
+          "description": "A high-intensity challenge for advanced users.",
+          "program": {
+            "resistance": "20 Push-Ups",
+            "cardio": "40 Jumping Lunges",
+            "stretching": "1-Minute Side Plank Stretch"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Advanced Challenge",
+          "description": "Push yourself with this intense workout.",
+          "program": {
+            "resistance": "25 Dumbbell Squats",
+            "cardio": "50 Mountain Climbers",
+            "stretching": "30-Second Shoulder Stand"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Advanced Challenge",
+          "description": "For those who want to go all out.",
+          "program": {
+            "resistance": "15 Pull-Ups",
+            "cardio": "30 Burpees",
+            "stretching": "1-Minute Warrior Pose"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Advanced Challeng",
+          "description": "High-intensity workout to test your limits.",
+          "program": {
+            "resistance": "20 Dumbbell Deadlifts",
+            "cardio": "50 High Knees",
+            "stretching": "45-Second Seated Forward Fold"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Advanced Challenge",
+          "description": "A challenging mix of strength, cardio, and flexibility.",
+          "program": {
+            "resistance": "30 Bodyweight Squats",
+            "cardio": "60 Jump Ropes",
+            "stretching": "1-Minute Happy Baby Pose"
+          }
+        }
+      ]
+    }
+  }
+  
