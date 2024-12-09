@@ -1,23 +1,63 @@
-import React from 'react';
-import { Platform } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Platform, Alert, ActivityIndicator, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Tabs } from 'expo-router'; // Import Tabs from expo-router
-import { Colors } from '@/constants/Colors'; // Custom color scheme
+import { Tabs, useNavigation } from 'expo-router';
+import { onAuthStateChanged } from 'firebase/auth';
+import { Colors } from '@/constants/Colors';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '../../firebaseConfig';
+import { router } from 'expo-router';
 
 export default function TabLayout(): JSX.Element {
   const colorScheme = useColorScheme();
+  const [userName, setUserName] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigation = useNavigation();
+
+  // Fetch the signed-in user's name before rendering
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUserName(user.displayName || 'User'); // Directly use displayName from the authenticated user
+        if (!user.displayName) {
+          setUserName('User'); // Fallback to 'User' if no display name is set
+        }
+
+        // Check if the user has a complete profile
+        const userDocRef = doc(db, 'users', user.uid);
+        const userSnap = await getDoc(userDocRef);
+        if (userSnap.exists() && !userSnap.data().profileComplete) {
+          router.replace('/ProfileSetup'); // Redirect to profile setup if not complete
+        }
+      } else {
+        router.replace('/SignInScreen'); // Redirect if no user is logged in
+      }
+      setLoading(false); // Stop loading
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // Show loading spinner while fetching userName
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color={Colors[colorScheme ?? 'dark'].tint} />
+      </View>
+    );
+  }
 
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
-        headerShown: false, // Hide the header by default
+        headerShown: true, // Ensure header is shown
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            position: 'absolute', // iOS style for the tab bar
+            position: 'absolute',
           },
           default: {},
         }),
@@ -30,9 +70,7 @@ export default function TabLayout(): JSX.Element {
           tabBarIcon: ({ color }: { color: string }) => (
             <Ionicons name="barbell" size={18} color={color} />
           ),
-          // You can customize the header for this tab specifically
-          headerShown: true,
-          headerTitle: `{Name's} Work App`, // Custom title for the 'Workouts' tab
+          headerTitle: userName ? `${userName}'s Work App` : "User's Work App", // Set headerTitle based on userName
         }}
       />
       <Tabs.Screen
@@ -42,8 +80,7 @@ export default function TabLayout(): JSX.Element {
           tabBarIcon: ({ color }: { color: string }) => (
             <Ionicons name="list" size={18} color={color} />
           ),
-          headerShown: true,
-          headerTitle: `{Name's} Programs`, // Custom title for the 'Programs' tab
+          headerTitle: userName ? `${userName}'s Workout Programs` : "User's Programs", // Set headerTitle based on userName
         }}
       />
       <Tabs.Screen
@@ -53,8 +90,7 @@ export default function TabLayout(): JSX.Element {
           tabBarIcon: ({ color }: { color: string }) => (
             <Ionicons name="calendar" size={18} color={color} />
           ),
-          headerShown: true,
-          headerTitle: `{Name's} Workout Schedule`, // Custom title for the 'Schedule' tab
+          headerTitle: userName ? `${userName}'s Workout Schedule` : "User's Workout Schedule", // Set headerTitle based on userName
         }}
       />
       <Tabs.Screen
@@ -64,13 +100,21 @@ export default function TabLayout(): JSX.Element {
           tabBarIcon: ({ color }: { color: string }) => (
             <Ionicons name="person" size={18} color={color} />
           ),
-          headerShown: true,
-          headerTitle: `{Name's} Profile`, // Custom title for the 'Profile' tab
+          headerTitle: userName ? `${userName}'s Profile` : "User's Profile", // Set headerTitle based on userName
         }}
       />
     </Tabs>
   );
 }
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,109 +1,275 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Alert,
+  Modal,
+  Platform,
+  TextInput,
+} from 'react-native';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from '../../firebaseConfig';
+import { router } from 'expo-router';
+import programsData from '../../exercises/programs.json';
+import { getDoc, doc, setDoc } from 'firebase/firestore';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import DatePicker from 'react-datepicker'; // For web
+import 'react-datepicker/dist/react-datepicker.css';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+type Exercise = { name: string; muscleGroup: string; sets: number; reps: any };
+type Program = { name: string; exercises: Exercise[] };
 
-export default function TabTwoScreen() {
+export default function ProgramsScreen() {
+  const [recommendedPrograms, setRecommendedPrograms] = useState<Program[]>([]);
+  const [savedPrograms, setSavedPrograms] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        generateRecommendedPrograms();
+      } else {
+        router.replace('/SignInScreen');
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const generateRecommendedPrograms = async () => {
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) return;
+
+    try {
+      const userDocRef = doc(db, 'users', currentUser.uid);
+      const userDocSnap = await getDoc(userDocRef);
+
+      if (userDocSnap.exists()) {
+        const userData = userDocSnap.data();
+        const experience = userData?.experience || 'Beginner';
+
+        const adjustSets = (sets: number): number => {
+          if (experience === 'Beginner') return Math.ceil(sets / 3);
+          if (experience === 'Intermediate') return Math.ceil(sets / 2);
+          return sets;
+        };
+
+        const shuffled = programsData
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 7)
+          .map((program) => ({
+            ...program,
+            exercises: program.exercises.map((exercise) => ({
+              ...exercise,
+              sets: adjustSets(exercise.sets),
+            })),
+          }));
+
+        setRecommendedPrograms(shuffled);
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+
+  const saveToSchedule = async () => {
+    if (!selectedProgram) return;
+
+    const currentUser = auth.currentUser;
+
+    if (currentUser) {
+      const userScheduleRef = doc(db, 'schedules', currentUser.uid);
+      const formattedDate = selectedDate.toISOString();
+
+      try {
+        await setDoc(
+          userScheduleRef,
+          {
+            [formattedDate]: {
+              programName: selectedProgram.name,
+              exercises: selectedProgram.exercises,
+            },
+          },
+          { merge: true }
+        );
+
+        Alert.alert('Success', `${selectedProgram.name} has been scheduled!`);
+        setSavedPrograms([...savedPrograms, selectedProgram.name]);
+        setModalVisible(false);
+      } catch (error) {
+        console.error('Error saving to schedule:', error);
+        Alert.alert('Error', 'Failed to save program to schedule.');
+      }
+    }
+  };
+
+  const openScheduleModal = (program: Program) => {
+    setSelectedProgram(program);
+    setModalVisible(true);
+  };
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
+    <View style={styles.container}>
+      <Text style={styles.title}>Recommended Programs</Text>
+      {loading ? (
+        <Text>Loading programs...</Text>
+      ) : (
+        <FlatList
+          data={recommendedPrograms}
+          keyExtractor={(item) => item.name}
+          renderItem={({ item }) => (
+            <View style={styles.programCard}>
+              <Text style={styles.programName}>{item.name}</Text>
+              {item.exercises.map((exercise, index) => (
+                <Text key={index} style={styles.exerciseText}>
+                  {exercise.name} - {exercise.muscleGroup} ({exercise.sets} sets,{' '}
+                  {exercise.reps} reps)
+                </Text>
+              ))}
+              {!savedPrograms.includes(item.name) && (
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => openScheduleModal(item)}
+                >
+                  <Text style={styles.addButtonText}>Add to Schedule</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          )}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Work</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+      )}
+
+      {/* Schedule Modal */}
+      {modalVisible && (
+        <Modal visible={modalVisible} transparent animationType="slide">
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>Schedule Program</Text>
+              <Text style={styles.modalProgramName}>
+                {selectedProgram?.name}
+              </Text>
+
+              {Platform.OS === 'web' ? (
+                // Web: Use react-datepicker
+                <DatePicker
+  selected={selectedDate}
+  onChange={(date: Date | null) => {
+    if (date) {
+      setSelectedDate(date);
+    }
+  }}
+  showTimeSelect
+  dateFormat="Pp"
+/>
+
+              ) : (
+                // Mobile: Use native DateTimePicker
+                <>
+                  <DateTimePicker
+                    value={selectedDate}
+                    mode="date"
+                    display="spinner"
+                    onChange={(event, date) => date && setSelectedDate(date)}
+                  />
+                  <DateTimePicker
+                    value={selectedDate}
+                    mode="time"
+                    display="spinner"
+                    onChange={(event, date) => date && setSelectedDate(date)}
+                  />
+                </>
+              )}
+
+              <TouchableOpacity style={styles.saveButton} onPress={saveToSchedule}>
+                <Text style={styles.saveButtonText}>Save</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text style={styles.cancelButtonText}>Cancel</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      )}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: { flex: 1, padding: 16, backgroundColor: '#F5F5F5' },
+  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 16 },
+  programCard: {
+    backgroundColor: '#FFF',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 16,
+    elevation: 3,
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  programName: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
+  exerciseText: { fontSize: 14, color: '#555' },
+  addButton: {
+    marginTop: 12,
+    backgroundColor: '#6200EE',
+    paddingVertical: 8,
+    borderRadius: 4,
+    alignItems: 'center',
   },
+  addButtonText: { color: '#FFF', fontWeight: 'bold' },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    width: '90%',
+    maxWidth: 400,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+    textAlign: 'center',
+  },
+  modalProgramName: {
+    fontSize: 16,
+    marginBottom: 15,
+    color: '#6200EE',
+    textAlign: 'center',
+  },
+  saveButton: {
+    marginTop: 10,
+    backgroundColor: '#6200EE',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  saveButtonText: { color: '#FFF', fontWeight: 'bold' },
+  cancelButton: {
+    marginTop: 10,
+    backgroundColor: '#d3d3d3',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  cancelButtonText: { color: '#333', fontWeight: 'bold' },
 });
+
+
+
+

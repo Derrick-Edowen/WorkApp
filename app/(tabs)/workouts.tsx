@@ -25,6 +25,7 @@ const workoutCategories: Category[] = [
   { id: '2', name: 'Cardio', color: '#0b80e6', icon: <Ionicons name="walk" size={60} color="white" /> },
   { id: '3', name: 'Stretching', color: '#1f911f', icon: <Ionicons name="heart-outline" size={60} color="white" /> },
   { id: '4', name: 'Daily Challenge', color: '#920be6', icon: <Ionicons name="pulse" size={60} color="white" /> },
+  
 
 ];
 

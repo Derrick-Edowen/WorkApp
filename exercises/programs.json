@@ -1,0 +1,115 @@
+[
+    {
+      "name": "Pull Day",
+      "exercises": [
+        { "name": "Pull-Ups", "muscleGroup": "Back", "sets": 8, "reps": 10 },
+        { "name": "Barbell Rows", "muscleGroup": "Back", "sets": 8, "reps": 10 },
+        { "name": "Bicep Curls", "muscleGroup": "Biceps", "sets": 6, "reps": 12 },
+        { "name": "Face Pulls", "muscleGroup": "Shoulders", "sets": 6, "reps": 12 },
+        { "name": "Lat Pulldowns", "muscleGroup": "Back", "sets": 8, "reps": 10 },
+        { "name": "Seated Cable Rows", "muscleGroup": "Back", "sets": 8, "reps": 10 }
+      ]
+    },
+    {
+      "name": "Push Day",
+      "exercises": [
+        { "name": "Bench Press", "muscleGroup": "Chest", "sets": 8, "reps": 8 },
+        { "name": "Overhead Press", "muscleGroup": "Shoulders", "sets": 6, "reps": 10 },
+        { "name": "Tricep Dips", "muscleGroup": "Triceps", "sets": 6, "reps": 12 },
+        { "name": "Incline Dumbbell Press", "muscleGroup": "Chest", "sets": 8, "reps": 8 },
+        { "name": "Lateral Raises", "muscleGroup": "Shoulders", "sets": 6, "reps": 12 },
+        { "name": "Skull Crushers", "muscleGroup": "Triceps", "sets": 6, "reps": 10 }
+      ]
+    },
+    {
+      "name": "Leg Day",
+      "exercises": [
+        { "name": "Squats", "muscleGroup": "Legs", "sets": 8, "reps": 10 },
+        { "name": "Lunges", "muscleGroup": "Legs", "sets": 6, "reps": 12 },
+        { "name": "Leg Press", "muscleGroup": "Legs", "sets": 6, "reps": 12 },
+        { "name": "Romanian Deadlifts", "muscleGroup": "Hamstrings", "sets": 8, "reps": 10 },
+        { "name": "Calf Raises", "muscleGroup": "Calves", "sets": 8, "reps": 15 },
+        { "name": "Leg Extensions", "muscleGroup": "Quads", "sets": 6, "reps": 12 }
+      ]
+    },
+    {
+      "name": "Cardio Day",
+      "exercises": [
+        { "name": "Treadmill", "muscleGroup": "Cardio", "sets": 1, "reps": "30 Minutes" },
+        { "name": "Cycling", "muscleGroup": "Cardio", "sets": 1, "reps": "30 Minutes" },
+        { "name": "Rowing Machine", "muscleGroup": "Cardio", "sets": 1, "reps": "15 Minutes" },
+        { "name": "Jump Rope", "muscleGroup": "Cardio", "sets": 1, "reps": "15 Minutes" },
+        { "name": "Stairmaster", "muscleGroup": "Cardio", "sets": 1, "reps": "25 Minutes" },
+        { "name": "Elliptical", "muscleGroup": "Cardio", "sets": 1, "reps": "20 Minutes" }
+      ]
+    },
+    {
+      "name": "Upper Body Strength",
+      "exercises": [
+        { "name": "Bench Press", "muscleGroup": "Chest", "sets": 8, "reps": 8 },
+        { "name": "Pull-Ups", "muscleGroup": "Back", "sets": 6, "reps": 10 },
+        { "name": "Dumbbell Shoulder Press", "muscleGroup": "Shoulders", "sets": 8, "reps": 10 },
+        { "name": "Bicep Curls", "muscleGroup": "Biceps", "sets": 6, "reps": 12 },
+        { "name": "Tricep Pushdowns", "muscleGroup": "Triceps", "sets": 6, "reps": 12 },
+        { "name": "Push-Ups", "muscleGroup": "Chest", "sets": 6, "reps": 15 }
+      ]
+    },
+    {
+      "name": "Full Body Strength",
+      "exercises": [
+        { "name": "Deadlifts", "muscleGroup": "Back", "sets": 8, "reps": 8 },
+        { "name": "Bench Press", "muscleGroup": "Chest", "sets": 8, "reps": 8 },
+        { "name": "Squats", "muscleGroup": "Legs", "sets": 8, "reps": 10 },
+        { "name": "Pull-Ups", "muscleGroup": "Back", "sets": 6, "reps": 10 },
+        { "name": "Overhead Press", "muscleGroup": "Shoulders", "sets": 6, "reps": 10 },
+        { "name": "Lunges", "muscleGroup": "Legs", "sets": 6, "reps": 12 }
+      ]
+    },
+    {
+      "name": "Core Day",
+      "exercises": [
+        { "name": "Plank", "muscleGroup": "Core", "sets": 6, "reps": "40 Seconds" },
+        { "name": "Hanging Leg Raises", "muscleGroup": "Core", "sets": 6, "reps": 15 },
+        { "name": "Russian Twists", "muscleGroup": "Obliques", "sets": 6, "reps": 20 },
+        { "name": "Ab Rollouts", "muscleGroup": "Core", "sets": 6, "reps": 12 },
+        { "name": "Bicycle Crunches", "muscleGroup": "Core", "sets": 6, "reps": 20 },
+        { "name": "Mountain Climbers", "muscleGroup": "Core", "sets": 6, "reps": 20 }
+      ]
+    },
+    {
+      "name": "Chest and Triceps",
+      "exercises": [
+        { "name": "Incline Bench Press", "muscleGroup": "Chest", "sets": 8, "reps": 8 },
+        { "name": "Close-Grip Bench Press", "muscleGroup": "Triceps", "sets": 6, "reps": 10 },
+        { "name": "Dumbbell Flyes", "muscleGroup": "Chest", "sets": 6, "reps": 12 },
+        { "name": "Tricep Dips", "muscleGroup": "Triceps", "sets": 6, "reps": 12 },
+        { "name": "Push-Ups", "muscleGroup": "Chest", "sets": 6, "reps": 15 },
+        { "name": "Overhead Tricep Extension", "muscleGroup": "Triceps", "sets": 6, "reps": 12 }
+      ]
+    },
+    {
+      "name": "Back and Biceps",
+      "exercises": [
+        { "name": "Pull-Ups", "muscleGroup": "Back", "sets": 8, "reps": 10 },
+        { "name": "Deadlifts", "muscleGroup": "Back", "sets": 8, "reps": 8 },
+        { "name": "Barbell Rows", "muscleGroup": "Back", "sets": 8, "reps": 10 },
+        { "name": "Seated Cable Rows", "muscleGroup": "Back", "sets": 6, "reps": 12 },
+        { "name": "Hammer Curls", "muscleGroup": "Biceps", "sets": 6, "reps": 12 },
+        { "name": "Incline Dumbbell Curls", "muscleGroup": "Biceps", "sets": 6, "reps": 12 }
+      ]
+    },
+    {
+      "name": "Leg and Glutes",
+      "exercises": [
+        { "name": "Barbell Squats", "muscleGroup": "Legs", "sets": 8, "reps": 10 },
+        { "name": "Hip Thrusts", "muscleGroup": "Glutes", "sets": 8, "reps": 10 },
+        { "name": "Romanian Deadlifts", "muscleGroup": "Hamstrings", "sets": 8, "reps": 10 },
+        { "name": "Lunges", "muscleGroup": "Legs", "sets": 6, "reps": 12 },
+        { "name": "Leg Press", "muscleGroup": "Legs", "sets": 6, "reps": 12 },
+        { "name": "Calf Raises", "muscleGroup": "Calves", "sets": 8, "reps": 15 }
+      ]
+    }
+  ]
+  
+  
+  

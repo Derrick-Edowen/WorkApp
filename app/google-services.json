@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "443790454662",
+    "project_id": "work-5fa17",
+    "storage_bucket": "work-5fa17.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443790454662:android:5fd59e8901473bf2cd0607",
+        "android_client_info": {
+          "package_name": "work.Fitness.DE97"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443790454662-6bcobqabvq7lgvemp68n2nj8l4ou9tip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrR1qlBoQdZinM5cqc8FlQ_8W4VaRf0AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443790454662-6bcobqabvq7lgvemp68n2nj8l4ou9tip.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "443790454662-br6rnleo8rbd3gslhhv6bf9rhqcj1fed.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "workfitness"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

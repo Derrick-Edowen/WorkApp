@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -9,17 +9,40 @@ import {
 } from 'react-native';
 import { useNavigation } from 'expo-router';
 import { router } from 'expo-router';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebaseConfig';
 
 // Get the height of the screen
 const screenHeight = Dimensions.get('window').height;
 
 const OtherScreen = () => {
   const navigation = useNavigation();
+  const [userName, setUserName] = useState<string | null>('User'); // Default user name
 
   // Animated values for the cards
   const animations = Array(3)
     .fill(null)
     .map(() => useRef(new Animated.Value(screenHeight)).current);
+
+  // Fetch signed-in user's name
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser && currentUser.displayName) {
+        setUserName(currentUser.displayName);
+      } else {
+        setUserName('User');
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    // Dynamically set the header title
+    navigation.setOptions({
+      headerTitle: `${userName}'s Daily Challenges`,
+    });
+  }, [navigation, userName]);
 
   useEffect(() => {
     // Run the animations when the component mounts
@@ -34,12 +57,6 @@ const OtherScreen = () => {
       )
     ).start();
   }, [animations]);
-
-  useEffect(() => {
-    navigation.setOptions({
-      headerTitle: `{Name's} Daily Challenges`, // Updated title for the top bar
-    });
-  }, [navigation]);
 
   const handleChallengePress = (level: string) => {
     // Navigate to the challenge details page with the level as a parameter
@@ -131,4 +148,5 @@ const styles = StyleSheet.create({
 });
 
 export default OtherScreen;
+
 
