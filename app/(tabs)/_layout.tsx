@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Platform, Alert, ActivityIndicator, View } from 'react-native';
+import { Platform, Alert, ActivityIndicator, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs, useNavigation } from 'expo-router';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -50,60 +50,68 @@ export default function TabLayout(): JSX.Element {
   }
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
-        headerShown: true, // Ensure header is shown
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}
-    >
-      <Tabs.Screen
-        name="workouts"
-        options={{
-          title: 'Exercises',
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Ionicons name="barbell" size={18} color={color} />
-          ),
-          headerTitle: userName ? `${userName}'s Work App` : "User's Work App", // Set headerTitle based on userName
-        }}
-      />
-      <Tabs.Screen
-        name="programs"
-        options={{
-          title: 'Programs',
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Ionicons name="list" size={18} color={color} />
-          ),
-          headerTitle: userName ? `${userName}'s Workout Programs` : "User's Programs", // Set headerTitle based on userName
-        }}
-      />
-      <Tabs.Screen
-        name="schedule"
-        options={{
-          title: 'Schedule',
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Ionicons name="calendar" size={18} color={color} />
-          ),
-          headerTitle: userName ? `${userName}'s Workout Schedule` : "User's Workout Schedule", // Set headerTitle based on userName
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Ionicons name="person" size={18} color={color} />
-          ),
-          headerTitle: userName ? `${userName}'s Profile` : "User's Profile", // Set headerTitle based on userName
-        }}
-      />
-    </Tabs>
+<Tabs
+  screenOptions={{
+    tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
+    headerShown: true, // Ensure header is shown
+    tabBarBackground: TabBarBackground,
+    tabBarStyle: Platform.select({
+      ios: {
+        position: 'absolute',
+      },
+      default: {},
+    }),
+    headerRight: ({ tintColor }: { tintColor?: string }) => (
+      <TouchableOpacity
+        onPress={() => router.push('/SettingsPage')}
+        style={{ marginRight: 15 }}
+      >
+        <Ionicons name="settings-outline" size={24} color={tintColor ?? '#000'} />
+      </TouchableOpacity>
+    ),
+  }}
+>
+  <Tabs.Screen
+    name="workouts"
+    options={{
+      title: 'Exercises',
+      tabBarIcon: ({ color }: { color: string }) => (
+        <Ionicons name="barbell" size={18} color={color} />
+      ),
+      headerTitle: userName ? `${userName}'s Work App` : "User's Work App", // Set headerTitle based on userName
+    }}
+  />
+  <Tabs.Screen
+    name="programs"
+    options={{
+      title: 'Programs',
+      tabBarIcon: ({ color }: { color: string }) => (
+        <Ionicons name="list" size={18} color={color} />
+      ),
+      headerTitle: userName ? `${userName}'s Workout Programs` : "User's Programs", // Set headerTitle based on userName
+    }}
+  />
+  <Tabs.Screen
+    name="schedule"
+    options={{
+      title: 'Schedule',
+      tabBarIcon: ({ color }: { color: string }) => (
+        <Ionicons name="calendar" size={18} color={color} />
+      ),
+      headerTitle: userName ? `${userName}'s Workout Schedule` : "User's Workout Schedule", // Set headerTitle based on userName
+    }}
+  />
+  <Tabs.Screen
+    name="profile"
+    options={{
+      title: 'Profile',
+      tabBarIcon: ({ color }: { color: string }) => (
+        <Ionicons name="person" size={18} color={color} />
+      ),
+      headerTitle: userName ? `${userName}'s Profile` : "User's Profile", // Set headerTitle based on userName
+    }}
+  />
+</Tabs>
   );
 }
 

@@ -65,7 +65,7 @@ export default function ProgramsScreen() {
 
         const shuffled = programsData
           .sort(() => Math.random() - 0.5)
-          .slice(0, 7)
+          .slice(0, 10)
           .map((program) => ({
             ...program,
             exercises: program.exercises.map((exercise) => ({

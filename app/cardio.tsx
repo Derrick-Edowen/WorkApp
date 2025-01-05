@@ -1,139 +1,177 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Dimensions, Animated, TouchableOpacity } from 'react-native';
-import { useNavigation } from 'expo-router';
-import { router } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { Animated, View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, ScrollView, Image } from 'react-native';
+import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const CardioScreen = () => {
   const navigation = useNavigation();
-
-  // Animated values for each card
-  const animations = [
-    useRef(new Animated.Value(screenHeight)).current, // Start off-screen
-    useRef(new Animated.Value(screenHeight)).current,
-    useRef(new Animated.Value(screenHeight)).current,
-  ];
-
+  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [expandedExerciseId, setExpandedExerciseId] = useState<string | null>(null);
+  interface Exercise {
+    id: string;
+    name: string;
+    secondaryMuscles: string[];
+    equipment: string;
+    bodyPart: string;
+    gifUrl: string;
+    instructions: string[];
+  }
   useEffect(() => {
     navigation.setOptions({
-      headerTitle: 'Endurance Training', // Custom title for the top bar
+      headerTitle: 'Endurance Training',
     });
 
-    // Staggered animation for the cards
-    Animated.stagger(
-      300, // Delay between each card animation
-      animations.map((animation) =>
-        Animated.timing(animation, {
-          toValue: 0, // Final position
-          duration: 600, // Animation duration
-          useNativeDriver: true, // Optimize animation
-        })
-      )
-    ).start();
-  }, [navigation, animations]);
+    const fetchExercises = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/exercises/cardiovascular system');
+        setExercises(response.data);
+      } catch (error) {
+        console.error('Error fetching exercises:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleCardPress = (enduranceLevel: string) => {
-    router.push(`/cardiodetail?enduranceLevel=${enduranceLevel}`);
+    fetchExercises();
+  }, [navigation]);
+
+  const toggleExpand = (id: string) => {
+    setExpandedExerciseId((prev) => (prev === id ? null : id));
   };
-  
 
-  return (
-    <View style={styles.container}>
-      {/* Card for Low Endurance */}
-      <Animated.View
-        style={[
-          styles.card,
-          styles.lowEndurance,
-          { transform: [{ translateY: animations[0] }] },
-        ]}
-      >
-        <TouchableOpacity onPress={() => handleCardPress('Low Endurance')}>
-          <Text style={styles.cardText}>Low Endurance</Text>
-          <Text style={styles.miniText}>Walking, Jogging and Spinning</Text>
-        </TouchableOpacity>
-      </Animated.View>
-
-      {/* Card for Medium Endurance */}
-      <Animated.View
-        style={[
-          styles.card,
-          styles.mediumEndurance,
-          { transform: [{ translateY: animations[1] }] },
-        ]}
-      >
-        <TouchableOpacity onPress={() => handleCardPress('Medium Endurance')}>
-          <Text style={styles.cardText}>Medium Endurance</Text>
-          <Text style={styles.miniText}>Sprints, Jump Rope, and Circuits</Text>
-        </TouchableOpacity>
-      </Animated.View>
-
-      {/* Card for High Endurance */}
-      <Animated.View
-        style={[
-          styles.card,
-          styles.highEndurance,
-          { transform: [{ translateY: animations[2] }] },
-        ]}
-      >
-        <TouchableOpacity onPress={() => handleCardPress('High Endurance')}>
-          <Text style={styles.cardText}>High Endurance</Text>
-          <Text style={styles.miniText}>Climbing, HIIT, and Swimming</Text>
-        </TouchableOpacity>
-      </Animated.View>
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#007BFF" />
+        <Text style={styles.loadingText}>Loading...</Text>
+      </View>
+    );
+  }
+  if (!exercises.length) {
+    return (
+      <View style={styles.loadingContainer}>
+      <Text style={styles.loadingText}>No Cardio Exercises Found!</Text>
     </View>
+    );
+  }
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      {exercises.map((exercise) => (
+        <TouchableOpacity
+          key={exercise.id}
+          onPress={() => toggleExpand(exercise.id)}
+          style={styles.card}
+        >
+          <Text style={styles.cardTitle}>{capitalize(exercise.name)}</Text>
+          <Text style={styles.cardDescription}>
+            Secondary Muscle Group: {exercise.secondaryMuscles[0] ? capitalize(exercise.secondaryMuscles[0]) : 'N/A'}
+          </Text>
+          <Text style={styles.cardDescription}>
+            Equipment: {exercise.equipment ? capitalize(exercise.equipment) : 'N/A'}
+          </Text>
+          <Text style={styles.cardDescription}>
+            Body Region: {exercise.bodyPart ? capitalize(exercise.bodyPart) : 'N/A'}
+          </Text>
+
+          {expandedExerciseId === exercise.id && (
+            <View style={styles.expandedContent}>
+              {exercise.gifUrl ? (
+                              <Image source={{ uri: exercise.gifUrl }} style={styles.gif} />
+                            ) : (
+                              <Text style={styles.noContentText}>No demo available.</Text>
+                            )}
+              <Text style={styles.instructionsHeader}>Instructions:</Text>
+              {exercise.instructions.length > 0 ? (
+                exercise.instructions.map((instruction: string, index: number) => (
+                  <Text key={index} style={styles.instruction}>
+                    {index + 1}. {instruction}
+                  </Text>
+                ))
+              ) : (
+                <Text style={styles.instruction}>No instructions available.</Text>
+              )}
+            </View>
+          )}
+        </TouchableOpacity>
+      ))}
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#f0f8ff', // Light background color for better contrast
+    backgroundColor: '#f0f8ff',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f0f8ff',
   },
   card: {
     width: '100%',
     borderRadius: 12,
     padding: 20,
     marginVertical: 10,
-    alignItems: 'center',
+    backgroundColor: '#4682B4',
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     elevation: 3,
   },
-  cardText: {
+  cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign:'center',
-    color: '#fff', // White text for contrast
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 10,
   },
-  miniText: {
-    fontSize: 12,
+  cardDescription: {
+    fontSize: 14,
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 5,
+  },
+  expandedContent: {
+    marginTop: 15,
+  },
+  gif: {
+    width: '100%',
+    height: 350,
+    marginBottom: 10,
+  },
+  instructionsHeader: {
+    fontSize: 16,
     fontWeight: 'bold',
-    textAlign:'center',
-    color: '#fff', // White text for contrast
+    marginBottom: 5,
+    textAlign: 'center',
+    color: '#fff',
   },
-  lowEndurance: {
-    backgroundColor: '#ADD8E6', // Light blue
+  instruction: {
+    fontSize: 14,
+    color: '#fff',
+    marginBottom: 2,
   },
-  mediumEndurance: {
-    backgroundColor: '#87CEEB', // Sky blue
+  noContentText: {
+    fontSize: 14,
+    color: '#888',
   },
-  highEndurance: {
-    backgroundColor: '#4682B4', // Steel blue
+  loadingText: {
+    marginTop: 8,
+    fontSize: 16,
+    color: '#555',
   },
 });
 
 export default CardioScreen;
+
 
 
 

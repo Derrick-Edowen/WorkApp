@@ -12,15 +12,13 @@ import { router } from 'expo-router';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 
-// Get the height of the screen
 const screenHeight = Dimensions.get('window').height;
 
 const OtherScreen = () => {
   const navigation = useNavigation();
   const [userName, setUserName] = useState<string | null>('User'); // Default user name
-
-  // Animated values for the cards
-  const animations = Array(3)
+  const [timeLeft, setTimeLeft] = useState<number>(86400000); // 24 hours in milliseconds
+  const animations = Array(2)
     .fill(null)
     .map(() => useRef(new Animated.Value(screenHeight)).current);
 
@@ -37,15 +35,31 @@ const OtherScreen = () => {
     return () => unsubscribe();
   }, []);
 
+  // Countdown logic for the timer
   useEffect(() => {
-    // Dynamically set the header title
+    const interval = setInterval(() => {
+      setTimeLeft((prevTimeLeft) => {
+        if (prevTimeLeft <= 1000) {
+          clearInterval(interval); // Stop the timer
+          return 0;
+        }
+        return prevTimeLeft - 1000;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  // Convert timeLeft to hours, minutes, and seconds
+
+
+  useEffect(() => {
     navigation.setOptions({
       headerTitle: `${userName}'s Daily Challenges`,
     });
   }, [navigation, userName]);
 
   useEffect(() => {
-    // Run the animations when the component mounts
     Animated.stagger(
       300,
       animations.map((animation) =>
@@ -58,35 +72,34 @@ const OtherScreen = () => {
     ).start();
   }, [animations]);
 
-  const handleChallengePress = (level: string) => {
-    // Navigate to the challenge details page with the level as a parameter
-    router.push(`/dailychallenge?level=${level}`);
+  // Navigate to the appropriate challenge screen
+  const handleChallengePress = (challenge: string) => {
+    if (challenge === 'Challenge1') {
+      router.push('/dailychallenge');
+    } else if (challenge === 'Challenge2') {
+      router.push('/cardiochallenge');
+    }
   };
 
   const cardData = [
     {
-      level: 'Beginner',
-      title: 'Beginner',
-      description: 'Short and simple exercises for beginners.',
+      challenge: 'Challenge1',
+      title: 'Resistance Training Challenge',
+      description: 'Start your day with this energizing challenge.',
     },
     {
-      level: 'Intermediate',
-      title: 'Intermediate',
-      description:
-        'A bit more challenging, great for intermediate fitness levels.',
-    },
-    {
-      level: 'Advanced',
-      title: 'Advanced',
-      description: 'Challenging exercises for seasoned athletes.',
+      challenge: 'Challenge2',
+      title: 'Endurance Training Challenge',
+      description: 'Take it up a notch with this fun workout.',
     },
   ];
 
   return (
     <View style={styles.container}>
+      {/* Cards */}
       {cardData.map((card, index) => (
         <Animated.View
-          key={card.level}
+          key={card.challenge}
           style={[
             styles.card,
             {
@@ -98,7 +111,7 @@ const OtherScreen = () => {
             },
           ]}
         >
-          <TouchableOpacity onPress={() => handleChallengePress(card.level)}>
+          <TouchableOpacity onPress={() => handleChallengePress(card.challenge)}>
             <Text style={styles.cardText}>{card.title}</Text>
             <Text style={styles.cardDescription}>{card.description}</Text>
           </TouchableOpacity>
@@ -111,18 +124,21 @@ const OtherScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
     backgroundColor: '#f0f8ff',
+    padding: 10,
   },
-  title: {
-    fontSize: 24,
+  timerText: {
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 30,
+    color: '#333',
+    textAlign: 'center',
+    marginVertical: 10,
   },
   card: {
-    width: '100%',
+    flex: 1,
+    width: '90%',
+    alignSelf: 'center',
+    justifyContent: 'center',
     padding: 20,
     marginVertical: 10,
     borderRadius: 12,
@@ -134,19 +150,21 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   cardText: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',
   },
   cardDescription: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#fff',
     textAlign: 'center',
-    marginTop: 5,
+    marginTop: 10,
   },
 });
 
 export default OtherScreen;
+
+
 
 

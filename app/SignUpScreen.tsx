@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
@@ -12,7 +12,14 @@ export default function SignUpScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+        const navigation = useNavigation();
+  
+      useEffect(() => {
+          navigation.setOptions({
+            headerTitle: `Work - Sign Up`,
+          });
+        }
+      , []);
   const handleSignUp = async () => {
     if (!email || !password || !name) {
       Alert.alert('Error', 'Please fill in all fields.');

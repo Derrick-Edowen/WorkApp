@@ -26,5 +26,11 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:443790454662:ios:13601570ddc1f15ecd0607</string>
+	<key>NSHealthShareUsageDescription</key>
+<string>We need access to your health data to track steps.</string>
+<key>NSHealthShareUsageDescription</key>
+<string>This app requires access to your health data to track your steps.</string>
+
+
 </dict>
 </plist>

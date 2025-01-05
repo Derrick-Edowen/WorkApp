@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
-  TouchableOpacity,
   ScrollView,
+  StyleSheet,
   Image,
+  TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useNavigation } from 'expo-router';
-
 type Exercise = {
   id: string; // API uses string IDs
   name: string;
@@ -22,18 +21,22 @@ type Exercise = {
   randomValue: number;
   instructions?: string[]; // Array of strings for instructions
 };
-
-const DailyChallenge = () => {
+const CardioChallenge = () => {
   const [exercises, setExercises] = useState<Exercise[]>([]);
   const [completed, setCompleted] = useState<{ [key: string]: boolean }>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [timeRemaining, setTimeRemaining] = useState<string>('');
   const navigation = useNavigation();
 
-  const EXERCISES_KEY = 'dailyExercises';
-  const COMPLETED_KEY = 'completedExercises';
-  const LAST_FETCH_KEY = 'lastFetchTime';
-  const RESET_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  const EXERCISES_KEY = 'cardioDailyExercises';
+  const COMPLETED_KEY = 'cardioCompletedExercises';
+  const TIMESTAMP_KEY = 'cardioChallengeTimestamp';
+
+  const isDataExpired = (timestamp: number) => {
+    const currentTime = Date.now();
+    const timeDifference = currentTime - timestamp;
+    return timeDifference >= 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  };
 
   const calculateTimeUntilNextReset = () => {
     const now = new Date();
@@ -52,32 +55,38 @@ const DailyChallenge = () => {
     setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
   };
 
+  const clearStorageAndFetchNewData = async () => {
+    await AsyncStorage.multiRemove([EXERCISES_KEY, COMPLETED_KEY, TIMESTAMP_KEY]);
+    await fetchExercisesFromBackend();
+  };
+
   const fetchExercisesFromBackend = async () => {
     try {
-      console.log('Fetching exercises from backend...');
-      const response = await axios.get('http://localhost:3000/api/challenges'); // Replace with your IP
-      console.log('Fetched Exercises from Backend:', response.data);
-
+      console.log('Fetching cardio exercises from backend...');
+      const response = await axios.get('http://localhost:3000/api/cardiochallenges'); // Replace with your IP
+      console.log('Fetched Cardio Exercises from Backend:', response.data);
       const allExercises: Exercise[] = response.data;
 
+      // Add a random value (10, 20, or 30) to each exercise
       const updatedExercises = allExercises.map((exercise) => {
         const randomValue = [10, 20, 30][Math.floor(Math.random() * 3)];
         return {
           ...exercise,
-          randomValue: randomValue,
+          randomValue,
         };
       });
 
       const shuffled = updatedExercises.sort(() => 0.5 - Math.random());
       const selectedExercises = shuffled.slice(0, 10);
 
-      const currentTime = Date.now();
-      await AsyncStorage.setItem(EXERCISES_KEY, JSON.stringify(selectedExercises));
-      await AsyncStorage.setItem(LAST_FETCH_KEY, currentTime.toString());
+      await AsyncStorage.multiSet([
+        [EXERCISES_KEY, JSON.stringify(selectedExercises)],
+        [TIMESTAMP_KEY, Date.now().toString()],
+      ]);
 
       setExercises(selectedExercises);
     } catch (error) {
-      console.error('Error fetching exercises from backend:', error);
+      console.error('Error fetching cardio exercises from backend:', error);
     } finally {
       setLoading(false);
     }
@@ -85,17 +94,26 @@ const DailyChallenge = () => {
 
   const loadSavedExercises = async () => {
     try {
-      const storedLastFetch = await AsyncStorage.getItem(LAST_FETCH_KEY);
-      const storedExercises = await AsyncStorage.getItem(EXERCISES_KEY);
+      const [storedExercises, storedTimestamp] = await AsyncStorage.multiGet([
+        EXERCISES_KEY,
+        TIMESTAMP_KEY,
+      ]);
 
-      const now = Date.now();
-      const timeSinceLastFetch = storedLastFetch ? now - parseInt(storedLastFetch, 10) : RESET_INTERVAL + 1;
+      const exercisesData = storedExercises[1];
+      const timestampData = storedTimestamp[1];
 
-      if (timeSinceLastFetch > RESET_INTERVAL || !storedExercises) {
-        console.log('24 hours passed or no stored exercises, fetching new data...');
-        await fetchExercisesFromBackend();
+      if (exercisesData && timestampData) {
+        const timestamp = parseInt(timestampData, 10);
+
+        if (isDataExpired(timestamp)) {
+          console.log('Data expired. Clearing storage and fetching new data.');
+          await clearStorageAndFetchNewData();
+        } else {
+          setExercises(JSON.parse(exercisesData));
+        }
       } else {
-        setExercises(JSON.parse(storedExercises));
+        console.log('No saved data found. Fetching new data.');
+        await fetchExercisesFromBackend();
       }
 
       const storedCompleted = await AsyncStorage.getItem(COMPLETED_KEY);
@@ -103,7 +121,7 @@ const DailyChallenge = () => {
         setCompleted(JSON.parse(storedCompleted));
       }
     } catch (error) {
-      console.error('Error loading saved exercises:', error);
+      console.error('Error loading saved cardio exercises:', error);
     } finally {
       setLoading(false);
     }
@@ -121,8 +139,8 @@ const DailyChallenge = () => {
     const timeUntilNextNoon = nextNoon.getTime() - now.getTime();
 
     setTimeout(async () => {
-      console.log('Resetting exercises at noon...');
-      await fetchExercisesFromBackend();
+      console.log('Resetting cardio exercises at noon...');
+      await clearStorageAndFetchNewData();
 
       // Re-schedule the reset for the next noon
       resetAtNoon();
@@ -143,7 +161,7 @@ const DailyChallenge = () => {
     }, 1000);
 
     navigation.setOptions({
-      headerTitle: `Daily Resistance Training Challenge`,
+      headerTitle: `Daily Endurance Training Challenge`,
     });
 
     return () => clearInterval(timer); // Cleanup on unmount
@@ -156,7 +174,7 @@ const DailyChallenge = () => {
   };
 
   const capitalize = (text: string) => {
-    if (!text) return 'N/A';
+    if (!text) return 'N/A'; // Fallback for null/undefined
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
   };
 
@@ -164,7 +182,7 @@ const DailyChallenge = () => {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#007bff" />
-        <Text>Loading your daily challenge...</Text>
+        <Text>Loading your cardio challenge...</Text>
       </View>
     );
   }
@@ -173,47 +191,46 @@ const DailyChallenge = () => {
 
   return (
     <ScrollView style={styles.container}>
-    <Text style={styles.summaryText}>Time until reset: {timeRemaining}</Text>
-    <Text style={styles.summaryText}>
-      {completedCount}/{exercises.length} Resistance Training Challenges Completed
-    </Text>
-    {exercises.map((exercise) => (
-      <View key={exercise.id} style={styles.exerciseCard}>
-        <Text style={styles.exerciseName}>
-          {exercise.randomValue} {capitalize(exercise.name)}
-        </Text>
-        <Text style={styles.exerciseDetails}>Target: {exercise.target}</Text>
-        <Text style={styles.exerciseDetails}>Body Part: {exercise.bodyPart}</Text>
-        <Text style={styles.exerciseDetails}>Equipment: {exercise.equipment}</Text>
-        <Image source={{ uri: exercise.gifUrl }} style={styles.gif} />
+      <Text style={styles.summaryText}>Time until reset: {timeRemaining}</Text>
+      <Text style={styles.summaryText}>
+        {completedCount}/{exercises.length} Endurance Challenges Completed
+      </Text>
+      {exercises.map((exercise) => (
+        <View key={exercise.id} style={styles.exerciseCard}>
+          <Text style={styles.exerciseName}>
+            {exercise.randomValue} {capitalize(exercise.name)}
+          </Text>
+          <Text style={styles.exerciseDetails}>Target: {exercise.target}</Text>
+          <Text style={styles.exerciseDetails}>Body Part: {exercise.bodyPart}</Text>
+          <Text style={styles.exerciseDetails}>Equipment: {exercise.equipment}</Text>
+          <Image source={{ uri: exercise.gifUrl }} style={styles.gif} />
 
-        {exercise.instructions && exercise.instructions.length > 0 && (
-          <View style={styles.instructionsContainer}>
-            <Text style={styles.instructionsHeader}>Instructions:</Text>
-            {exercise.instructions.map((instruction, index) => (
-              <Text key={index} style={styles.instructionText}>
-                {index + 1}. {instruction}
-              </Text>
-            ))}
-          </View>
-        )}
+          {exercise.instructions && exercise.instructions.length > 0 && (
+            <View style={styles.instructionsContainer}>
+              <Text style={styles.instructionsHeader}>Instructions:</Text>
+              {exercise.instructions.map((instruction, index) => (
+                <Text key={index} style={styles.instructionText}>
+                  {index + 1}. {instruction}
+                </Text>
+              ))}
+            </View>
+          )}
 
-        {completed[exercise.id] ? (
-          <Text style={styles.completedText}>✅ Completed!</Text>
-        ) : (
-          <TouchableOpacity
-            style={styles.completeButton}
-            onPress={() => handleMarkComplete(exercise.id)}
-          >
-            <Text style={styles.buttonText}>Mark as Complete</Text>
-          </TouchableOpacity>
-        )}
-      </View>
-    ))}
-  </ScrollView>
-);
+          {completed[exercise.id] ? (
+            <Text style={styles.completedText}>✅ Completed!</Text>
+          ) : (
+            <TouchableOpacity
+              style={styles.completeButton}
+              onPress={() => handleMarkComplete(exercise.id)}
+            >
+              <Text style={styles.buttonText}>Mark as Complete</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      ))}
+    </ScrollView>
+  );
 };
-
 
 
 const styles = StyleSheet.create({
@@ -295,4 +312,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DailyChallenge;
+export default CardioChallenge;
+
+
+
+
+
+
+

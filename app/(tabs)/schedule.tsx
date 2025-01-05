@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Button, Alert, FlatList } from 'react-native';
+import { StyleSheet, View, Text, Button, Alert, FlatList, ScrollView} from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import { useLocalSearchParams } from 'expo-router';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Colors } from '@/constants/Colors';
 import { getFirestore, collection, query, where, getDocs, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 
 // Define types for scheduled programs
 type ScheduledProgram = {
   programName: string;
   time: string; // Time in string format for display
+  exercises: any;
 };
 
 const ScheduleScreen = () => {
@@ -29,48 +31,95 @@ const ScheduleScreen = () => {
       fetchScheduledPrograms(selectedDate);
     }
   }, [selectedDate]);
-
+  const formatDate = (isoDate: string) => {
+    // Extract year, month, and day from the ISO string
+    const [year, month, day] = isoDate.split('T')[0].split('-');
+    
+    // Construct the date manually to avoid time zone shifts
+    const localDate = new Date(Number(year), Number(month) - 1, Number(day));
+    
+    // Format the date to "December 16, 2024"
+    return localDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+  const formatTimeFromISO = (isoString: string) => {
+    if (!isoString) return 'All Day';
+  
+    // Extract the time portion
+    const timePart = isoString.split('T')[1]; // e.g., "17:00:00.000Z"
+    const [hours, minutes] = timePart.split(':');
+  
+    // Create a Date object with UTC time
+    const date = new Date();
+    date.setUTCHours(Number(hours), Number(minutes), 0);
+  
+    // Format the time to a readable format (12-hour clock)
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
+  };
+  
   // Fetch scheduled programs from Firestore for the selected date
   const fetchScheduledPrograms = async (date: string) => {
     if (!currentUser) return;
   
-    // Create a timestamp for the start and end of the selected day
-    const startOfDay = new Date(date + 'T00:00:00.000Z'); // 2024-12-10T00:00:00.000Z
-    const endOfDay = new Date(date + 'T23:59:59.999Z'); // 2024-12-10T23:59:59.999Z
-    console.log('Start of day:', startOfDay);
-    console.log('End of day:', endOfDay);
     try {
-      const q = query(
-        collection(db, 'scheduledPrograms'),
-        where('userId', '==', currentUser.uid),
-        where('date', '>=', startOfDay),  // Get programs starting from the beginning of the day
-        where('date', '<=', endOfDay)     // Get programs before the end of the day
-      );
-      const querySnapshot = await getDocs(q);
-      const programs: ScheduledProgram[] = [];
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        programs.push({
-          programName: data.programName,
-          time: data.time,
-        });
-      });
+      const userScheduleRef = doc(db, 'schedules', currentUser.uid);
+      const userScheduleSnap = await getDoc(userScheduleRef);
   
-      setScheduledPrograms((prev) => ({
-        ...prev,
-        [date]: programs,
-      }));
+      if (userScheduleSnap.exists()) {
+        const userScheduleData = userScheduleSnap.data();  
+        // Format the selected date to match the date format in Firestore (yyyy-mm-dd)
+        const formattedSelectedDate = date.split('T')[0]; // Get just the yyyy-mm-dd part
+  
+        // Find a key that matches the selected date, ignoring the time component
+        const matchingKey = Object.keys(userScheduleData).find((key) => key.startsWith(formattedSelectedDate));
+  
+        const programsForDate = matchingKey ? userScheduleData[matchingKey] : null;
+        const formattedTime = formatTimeFromISO(matchingKey || 'T00:00:00.000Z');
+
+        setScheduledPrograms((prev) => ({
+          ...prev,
+          [formattedSelectedDate]: programsForDate
+            ? [
+                {
+                  programName: programsForDate.programName,
+                  time: formattedTime,
+                  exercises: programsForDate.exercises || [],
+                },
+              ]
+            : [],
+        }));
+      } else {
+        setScheduledPrograms((prev) => ({
+          ...prev,
+          [date]: [], // Use the raw `date` value here if no program is found
+        }));
+      }
     } catch (error) {
       console.error('Error fetching programs: ', error);
       Alert.alert('Error', 'There was an issue fetching the scheduled programs.');
     }
   };
   
+  
+  
+  
+  
+  
 
   const handleDayPress = (day: any) => {
-    setSelectedDate(day.dateString);
-    setShowTimePicker(true); // Show time picker after date selection
+    const isoDate = new Date(day.dateString).toISOString().split('T')[0]; // Remove the time part
+    setSelectedDate(isoDate);
+    fetchScheduledPrograms(isoDate);
   };
+  
+  
 
   const confirmSchedule = async () => {
     if (!selectedDate || !time) {
@@ -97,9 +146,14 @@ const ScheduleScreen = () => {
         ...prev,
         [selectedDate]: [
           ...(prev[selectedDate] || []),
-          { programName: programName || 'Unnamed Program', time: formattedTime },
+          { 
+            programName: programName || 'Unnamed Program', 
+            time: formattedTime, 
+            exercises: [] // Provide an empty array as the default for exercises
+          },
         ],
       }));
+      
   
       Alert.alert('Success', `${programName} has been scheduled for ${selectedDate} at ${formattedTime}.`);
       setTime(null);
@@ -112,6 +166,8 @@ const ScheduleScreen = () => {
   
 
   return (
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+    
     <View style={styles.container}>
       <Text style={styles.title}>Schedule {programName}</Text>
       <Calendar
@@ -151,24 +207,45 @@ const ScheduleScreen = () => {
 
       {selectedDate && (
         <View style={styles.programContainer}>
-          <Text style={styles.scheduledTitle}>Scheduled Programs for {selectedDate}</Text>
+<Text style={styles.scheduledTitle}>
+  Scheduled Programs for {formatDate(selectedDate)}
+</Text>
+
           {scheduledPrograms[selectedDate] && scheduledPrograms[selectedDate].length > 0 ? (
-            <FlatList
-              data={scheduledPrograms[selectedDate]}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={({ item }) => (
-                <View style={styles.programCard}>
-                  <Text style={styles.programName}>{item.programName}</Text>
-                  <Text style={styles.programTime}>Time: {item.time}</Text>
-                </View>
-              )}
-            />
+           <FlatList
+           data={scheduledPrograms[selectedDate]}
+           keyExtractor={(item, index) => index.toString()}
+           renderItem={({ item }) => (
+             <View style={styles.programCard}>
+               <Text style={styles.programName}>{item.programName}</Text>
+               <Text style={styles.programTime}>Time: {item.time}</Text>
+               {item.exercises && item.exercises.length > 0 && (
+                <View>
+    <Text style={styles.exerciseHeader}>Exercises:</Text>
+    {item.exercises.map((exercise: any, index: number) => (
+      <View key={index} style={styles.exerciseItem}>
+        <Text>Name: {exercise.name}</Text>
+        <Text>Muscle Group: {exercise.muscleGroup}</Text>
+        <Text>Sets: {exercise.sets}</Text>
+        <Text>Reps: {exercise.reps}</Text>
+      </View>
+    ))}
+  </View>
+
+)}
+
+             </View>
+           )}
+         />
+         
           ) : (
             <Text style={styles.noProgramsText}>No Programs Scheduled for this date</Text>
           )}
         </View>
       )}
     </View>
+        </ScrollView>
+    
   );
 };
 
@@ -180,10 +257,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.background,
     padding: 16,
   },
+  scrollContainer: {
+    paddingBottom: 20, // Extra space at the bottom for smoother scrolling
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+    textAlign:'center',
     color: Colors.light.text,
   },
   infoContainer: {
@@ -198,11 +279,25 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   scheduledTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
     color: Colors.light.tint,
   },
+  exerciseHeader: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 8,
+    marginBottom: 4,
+    color: Colors.light.tint,
+  },
+  exerciseItem: {
+    padding: 8,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 4,
+    marginBottom: 4,
+    elevation: 1,
+  },  
   programCard: {
     backgroundColor: '#FFF',
     padding: 12,
