@@ -36,3 +36,6 @@ yarn-error.*
 firebaseConfig
 
 app-example
+
+# Ignore server.js
+server.js
