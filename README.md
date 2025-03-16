@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+🏋️‍♂️ Work App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+📌 Overview
+This is a React Native Expo fitness app that helps users find exercises for specific muscle groups, track nutrition, and schedule workout programs. Built using TypeScript and Firebase, the app provides a seamless experience for managing fitness goals.
 
-## Get started
+✨ Features
+🔍 Search Exercises – Find exercises based on targeted muscle groups.
+🥗 Nutritional Information & Recipes – Search for recipes and nutrition facts based on a protein (e.g., chicken, beef, tuna), including vegan & vegetarian options.
+👤 User Profiles – Firebase-powered authentication for user sign-in and profile management.
+📅 Workout Scheduling – Plan and schedule workout programs on specific days.
 
-1. Install dependencies
+🚀 Getting Started
+1️⃣ Install dependencies
+- npm install
+2️⃣ Start the app
+- npm start
+You'll see options to run the app on:
 
-   ```bash
-   npm install
-   ```
+✅ Development Build
+📱 Android Emulator
+🍏 iOS Simulator
+🌐 Expo Go
+🔧 Tech Stack
+React Native Expo – For cross-platform mobile development
+TypeScript – Strongly typed JavaScript for better reliability
+Firebase – Authentication and backend services
 
-2. Start the app
+🖼️ Screenshots
+![Sample 1](./assets/images/exersample.PNG)
+![Sample 2](./assets/images/exersample2.PNG)
+![Sample 3](./assets/images/exersample3.PNG)
+![Sample 4](./assets/images/exersample4.PNG)
+![Sample 5](./assets/images/exersample5.PNG)
+![Sample 6](./assets/images/exersample6.PNG)
+![Sample 7](./assets/images/exersample7.PNG)
+![Sample 8](./assets/images/exersample8.PNG)
+![Sample 9](./assets/images/exersample9.PNG)
 
-   ```bash
-    npx expo start
-   ```
+📚 Learn More
+Check out these resources to dive deeper into Expo and React Native:
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Expo Documentation
+React Native Docs
